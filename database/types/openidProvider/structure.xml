@@ -3,4 +3,5 @@
     <field comment="Set the discovery endpoint here if known" minOccurs="0" name="discoveryEndpoint" type="java.net.URI"/>
     <field comment="The user info call" minOccurs="0" name="userInfoEndpoint" type="java.net.URI"/>
     <field comment="In some cases you want to allow the JWT tokens directly without wrapping them in our own. E.g. in API cases" minOccurs="0" name="allowAsBearer" type="java.lang.Boolean"/>
+    <field comment="The issuer returned by discovery MUST exactly match the value of iss in the ID Token. " minOccurs="0" name="issuer" type="java.lang.String"/>
 </structure>

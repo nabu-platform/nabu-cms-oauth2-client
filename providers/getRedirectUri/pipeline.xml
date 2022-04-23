@@ -1,0 +1,10 @@
+<structure interface="nabu.cms.oauth2.client.specs.getRedirectUri" name="pipeline">
+    <structure name="input">
+        <field name="oauth2ProviderId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    </structure>
+    <structure name="output">
+        <field name="redirectUri" type="java.net.URI"/>
+    </structure>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <field name="implementationId" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,7 @@
+<structure interface="nabu.cms.oauth2.client.specs.getUserInfo" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <field name="implementationId" type="java.lang.String"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.openidProvider.types.output" duplicate="id" name="openidProvider"/>
+</structure>

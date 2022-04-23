@@ -1,0 +1,5 @@
+<structure interface="be.nabu.eai.authentication.api.TypedAuthenticator.authenticate" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" name="login"/>
+</structure>

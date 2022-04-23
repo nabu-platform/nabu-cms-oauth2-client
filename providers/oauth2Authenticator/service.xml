@@ -1,0 +1,47 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="c2855de2-9d99-47cb-ba3a-50dc7d650470"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="e90d1d36-04b4-49e1-8c42-ebe427d4eeee"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="1f737e88-c478-4132-a781-6a97b6c65e55"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.get"
+				resultName="result557c702d06eb41c0a61b92b1ccd720ad"
+				temporaryMapping="true"
+				x="117"
+				y="48"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6e06dea0-85b2-4437-8888-8d715fb1e0ea"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/credentials/name</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="81783216-bea2-4a5a-b31b-3545e1130430"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result557c702d06eb41c0a61b92b1ccd720ad/result</from>
+			<to>login</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Invalid login details: &quot; + input/credentials/name"
+			disabled="false"
+			id="9ac70b62-edb2-4cbb-97c2-c3e778b4c653"
+			label="!login"
+			lineNumber="3"
+			message="Invalid login details" xsi:nil="true"/>
+</sequence>
