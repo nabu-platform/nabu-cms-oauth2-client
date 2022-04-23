@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T10:31:37.426+02:00" lastModified="2022-04-23T10:48:15.571+02:00" leaf="true" version="25">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.cms.oauth2.client.specs.discoverOpenid</references>
+    <references>nabu.cms.oauth2.client.specs.discoverOauth2</references>
+    <references>be.nabu.libs.types.base.Duration</references>
+    <references>nabu.cms.oauth2.client.services.provider.list</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.create</references>
+    <references>java.lang.String</references>
+    <references>nabu.cms.oauth2.client.crud.openidProvider.types.createOutput</references>
+    <references>nabu.cms.oauth2.client.crud.openidProvider.services.create</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.createOutput</references>
+    <references>nabu.cms.oauth2.client.services.provider.provider</references>
+</node>

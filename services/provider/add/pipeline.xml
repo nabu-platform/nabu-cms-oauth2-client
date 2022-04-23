@@ -1,0 +1,15 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="webApplicationId" type="java.lang.String"/>
+        <field name="discoveryServiceId" type="java.lang.String"/>
+        <field minOccurs="0" name="clientId" type="java.lang.String"/>
+        <field minOccurs="0" name="clientSecret" type="java.lang.String"/>
+        <field minOccurs="0" name="httpClientId" type="java.lang.String"/>
+        <field minOccurs="0" name="processPath" type="java.lang.String"/>
+        <field minOccurs="0" name="maximumLoginWait" type="be.nabu.libs.types.base.Duration"/>
+    </structure>
+    <structure name="output"/>
+    <structure definition="nabu.cms.oauth2.client.services.provider.provider" minOccurs="0" name="provider"/>
+    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.openidProvider.types.createOutput" duplicate="id" name="openidProvider"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.createOutput" name="oauth2Provider"/>
+</structure>

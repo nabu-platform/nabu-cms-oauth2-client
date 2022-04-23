@@ -1,0 +1,5 @@
+<structure name="provider">
+    <field name="name" type="java.lang.String"/>
+    <field comment="oauth2 or openid" name="type" type="java.lang.String"/>
+    <field comment="The discovery service" name="discoveryServiceId" type="java.lang.String"/>
+</structure>

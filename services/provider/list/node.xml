@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T10:31:44.835+02:00" lastModified="2022-04-23T10:34:47.429+02:00" leaf="true" version="8">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.reflection.Service.listImplementations</references>
+    <references>nabu.utils.types.NodeDescription</references>
+    <references>nabu.cms.oauth2.client.services.provider.provider</references>
+</node>

@@ -1,0 +1,110 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="ec62a7cd-4ecf-4813-bdc5-baed447934e1"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="a11e010b-2a7c-4618-9781-08aa3040b2cc"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="204dcf1e-5ceb-4324-b00b-0cde35a286a6"
+				serviceId="nabu.cms.oauth2.client.crud.openidProvider.services.get"
+				resultName="result381e1bb5ad664b0a9db590025cd92787"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="25804aa8-b5a1-4fdf-8c6b-8bd629f605bc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/openidProviderId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="8ae63566-11b0-4197-815a-5cef1470bcea"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result381e1bb5ad664b0a9db590025cd92787/result</from>
+			<to>openid</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="60e9c98c-5d9c-48a6-8451-3a86fa8df8eb"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b31aff9b-601d-459b-ad44-92111f386579"
+				serviceId="nabu.cms.oauth2.client.services.discovery.apply"
+				resultName="result155ad73a144b4929a120f8ff2272130d"
+				temporaryMapping="true"
+				x="121"
+				y="65"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="711959d2-fa80-47b8-a0de-1c5e8bc73d38"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>openid</from>
+				<to>provider</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="54c1ce53-1c7f-4c1f-a931-588f10388066"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>https://accounts.google.com/.well-known/openid-configuration</from>
+				<to>discoveryUri</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="0a083502-62c8-4344-815c-263e36e06df3"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="ad40ac3a-2ea9-4168-864a-487ed8f0f924"
+				serviceId="nabu.cms.oauth2.client.crud.openidProvider.services.update"
+				resultName="resultabfd1f5eb9b9423b8cb3cf8803eca875"
+				temporaryMapping="true"
+				x="114"
+				y="87"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fb45c3cf-0f29-44f8-ad58-e469cb0a3bc8"
+					mask="true"
+					optional="false"
+					fixedValue="false">
+				<from>openid</from>
+				<to>instance</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9d61948b-c6a8-4c0e-9064-9280302b6c5a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>openid/id</from>
+				<to>id</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
