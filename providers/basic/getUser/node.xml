@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:36:35.384+02:00" lastModified="2022-04-23T13:20:48.871+02:00" leaf="true" version="44">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:36:35.384+02:00" lastModified="2022-04-23T17:50:03.465+02:00" leaf="true" version="99">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
+    <references>nabu.cms.core.types.emodel.core.Account</references>
     <references>nabu.cms.core.crud.nodeExternalId.services.create</references>
-    <references>nabu.cms.core.crud.user.services.create</references>
+    <references>nabu.cms.core.crud.account.services.update</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.cms.core.crud.account.services.get</references>
     <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.cms.core.crud.account.services.create</references>
     <references>java.util.UUID</references>
-    <references>nabu.cms.core.crud.nodeExternalId.types.output</references>
-    <references>nabu.web.application.Services.information</references>
-    <references>java.lang.Long</references>
     <references>nabu.cms.core.services.masterdata.entry.get</references>
-    <references>nabu.cms.oauth2.client.providers.basic.getUserInfo</references>
+    <references>nabu.cms.oauth2.client.providers.basic.getExistingUser</references>
     <references>nabu.cms.oauth2.client.types.token</references>
-    <references>be.nabu.libs.http.jwt.JWTBody</references>
     <references>nabu.cms.oauth2.client.types.userInfo</references>
+    <references>be.nabu.libs.http.jwt.JWTBody</references>
     <references>java.lang.String</references>
-    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
     <references>nabu.cms.oauth2.client.specs.getUser</references>
-    <references>nabu.web.application.types.WebApplicationInformation</references>
-    <references>nabu.cms.core.crud.user.services.list</references>
-    <references>nabu.web.application.jwt.Services.unmarshal</references>
-    <references>nabu.cms.oauth2.client.specs.enrichUser</references>
-    <references>nabu.cms.core.crud.nodeExternalId.services.list</references>
 </node>

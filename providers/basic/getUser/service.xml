@@ -4,192 +4,22 @@
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
-			id="8cd5fe23-039a-4418-84bf-2d2cd8f506eb"
-			label="input/token/id_token != null"
+			id="c45dd150-a648-4a02-b0d1-3fd3c5993684"
 			lineNumber="2">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
-				id="b88bfe0d-5bbb-490b-930d-d8349ce27efb"
-				serviceId="nabu.web.application.jwt.Services.unmarshal"
-				resultName="result6e522b91e11a47fa92a37c5b2bd77570"
+				id="30f27335-08a1-454b-9ba3-194ebf77900a"
+				serviceId="nabu.cms.oauth2.client.providers.basic.getExistingUser"
+				resultName="result5e1c93f80d474254bce7f37861703240"
 				temporaryMapping="true"
-				x="50"
-				y="71"
+				x="92"
+				y="49"
 				invocationOrder="0"
 				asynchronous="false"
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="23addd6e-f081-4527-871b-00c5eb88f117"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/token/id_token</from>
-				<to>content</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="b4a729a0-74e3-4a5a-8e14-05ca72815e81"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result6e522b91e11a47fa92a37c5b2bd77570/response</from>
-			<to>token</to>
-		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
-			id="1fdab5312b564f6299b2bd354983cf76"
-			label="token"
-			lineNumber="3">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="725315d3c4bf4d85b13deef730e0f8da"
-				serviceId="nabu.cms.core.services.masterdata.entry.get"
-				resultName="resultbfde01042ed240fb867416242aa0b794"
-				temporaryMapping="true"
-				x="122"
-				y="107"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="fe88f2bfd58a4fcd828d04a735281660"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>openidIssuer</from>
-				<to>category</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="63d4ad129b4e4770a09057ab6454e118"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>token/iss</from>
-				<to>name</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="0606aa32-6ebe-419a-9484-124033eeccac"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>resultbfde01042ed240fb867416242aa0b794/entryId</from>
-			<to>externalIdTypeId</to>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="f5a52ffb-1d28-4643-8cca-308f80d18023"
-				serviceId="nabu.cms.core.crud.nodeExternalId.services.list"
-				resultName="result16bcd068c79f4fa0b738fee57b952212"
-				temporaryMapping="true"
-				x="385"
-				y="338"
-				invocationOrder="1"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="457c72a9-48de-4682-8238-3eea97ea7ba3"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>resultbfde01042ed240fb867416242aa0b794/entryId</from>
-				<to>filter/externalIdTypeId[0]</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="c99d4c9d-16d8-437c-be07-30d303ff619e"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>token/sub</from>
-				<to>filter/externalId[0]</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="c8b6ede6-80ff-481a-ae9c-5c18546bbe77"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result16bcd068c79f4fa0b738fee57b952212/results[0]/nodeId</from>
-			<to>output/userId</to>
-		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
-			comment="We have already found the user, no need to proceed"
-			disabled="false"
-			id="68292c69-bdac-49d9-9789-72828f6f84eb"
-			label="output/userId != null"
-			lineNumber="4">
-		<count>1</count>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
-			id="c0e0324f-bf5d-47e5-97b2-66cee2e3ff83"
-			lineNumber="5">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="36840d87-16ab-44b0-896a-404dfa039c2c"
-				serviceId="nabu.cms.oauth2.client.crud.oauth2Provider.services.get"
-				resultName="result80eed947e3c8406784ac6e679c8f5616"
-				temporaryMapping="true"
-				x="188"
-				y="73"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="9c2e5603-e1af-4ff6-a1a6-15f7c5938a62"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/oauth2ProviderId</from>
-				<to>id</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="aaff3dc3-35e5-4f98-b5cf-19c100fc988f"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result80eed947e3c8406784ac6e679c8f5616/result</from>
-			<to>provider</to>
-		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
-			disabled="false"
-			id="e6894b82-2b7d-4983-bd7f-de6831e7bc3b"
-			label="!provider"
-			lineNumber="6"
-			message="Invalid provider" xsi:nil="true"/>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="We attempt to get some user info"
-			disabled="false"
-			id="67d2fb6c-a7bd-459f-a550-23a31ddd4508"
-			lineNumber="7">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="ada85545-e053-4d50-a0f2-b2ea66adbc09"
-				serviceId="nabu.cms.oauth2.client.providers.basic.getUserInfo"
-				resultName="resultc91f9e39488e4f108103a0eb696fe546"
-				temporaryMapping="true"
-				x="354"
-				y="114"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="4fb2d852-2c20-4c19-b822-928da6b59385"
+					id="8c24de79-4ea2-42c0-a60c-bd49b1acd759"
 					mask="false"
 					optional="false"
 					fixedValue="false">
@@ -198,266 +28,475 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="e918e080-dcb6-4883-9744-719775be0b41"
+					id="c7beb0c8-b2e2-4fb3-ae42-4d64ed83105b"
 					mask="false"
 					optional="false"
 					fixedValue="false">
 				<from>input/token</from>
 				<to>token</to>
 			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="1e2bdb57-b239-471d-9114-6d987dbaf534"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>resultc91f9e39488e4f108103a0eb696fe546/userInfo</from>
-			<to>userInfo</to>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="a9930d79-d7ae-4917-a806-2e8fdad2d3cc"
-				serviceId="nabu.web.application.Services.information"
-				resultName="resultdf597c2377fb44bb9e1d6125504f2dcd"
-				temporaryMapping="true"
-				x="118"
-				y="217"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="86e18592-6d60-4c1b-8017-c80b84daad7b"
+					id="06edd3b5-c100-484e-a381-efb1891ab2c7"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>provider/webApplicationId</from>
-				<to>webApplicationId</to>
+				<from>input/userInfo</from>
+				<to>userInfo</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="335692a4-01f1-4d57-9212-69ae03b9c6a2"
+				id="743b4b80-035e-48b4-b1c6-5b7bff130e62"
 				mask="false"
 				optional="false"
 				fixedValue="false">
-			<from>resultdf597c2377fb44bb9e1d6125504f2dcd/information</from>
-			<to>information</to>
-		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="Try to find the account by email"
-			disabled="false"
-			id="017c65f4-c304-4bc5-b067-fc9f3c0d2e89"
-			label="userInfo/email != null"
-			lineNumber="8">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="494a6ea7-8a03-4edb-a2e4-23424ebce00b"
-				serviceId="nabu.cms.core.crud.user.services.list"
-				resultName="result134e3ac9ee9645c79ea4dd4855e14b71"
-				temporaryMapping="true"
-				x="402"
-				y="169"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="e98a9bba-dc92-4f6b-a68c-73f7c0dbba01"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>userInfo/email</from>
-				<to>filter/alias</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="ba2f9f01-d682-4cc0-af96-7e2b5a715f7b"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>information/realm</from>
-				<to>filter/realm[0]</to>
-			</steps>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
-				id="93d4f1d9-ef36-4c61-a5a9-3da634741e60"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result134e3ac9ee9645c79ea4dd4855e14b71/results[0]/id</from>
+			<from>result5e1c93f80d474254bce7f37861703240/userId</from>
 			<to>output/userId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ea67f87e-07bf-4725-9565-925f3291e2f4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result5e1c93f80d474254bce7f37861703240/token</from>
+			<to>token</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ed8f5761-8cb6-4bd3-846f-40360079931e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result5e1c93f80d474254bce7f37861703240/realm</from>
+			<to>realm</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="336f35a8-4d66-4032-ae23-057f87f000c1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result5e1c93f80d474254bce7f37861703240/externalId</from>
+			<to>externalId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="21d1ac43-37e2-45fe-87a8-609a871964b4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result5e1c93f80d474254bce7f37861703240/externalIdTypeId</from>
+			<to>externalIdTypeId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9ce9277f-c99a-4a90-9c2b-cda790821373"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/userInfo</from>
+			<to>userInfo</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			comment="If it's not an existing user and we don't have a token or email address, we can't do much here"
+			disabled="false"
+			id="4c38b04c-265b-4e1f-b6cd-34080c1c6f61"
+			label="token == null &amp;&amp; userInfo/email == null &amp;&amp; output/userId == null"
+			lineNumber="3"
+			message="No token present and no email available" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="28a930a6-a63a-4f1e-a151-787a15572dca"
+			lineNumber="4"
+			query="output/userId">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				comment="User does not exist yet, create it"
+				disabled="false"
+				id="84e172a3-7e54-4b55-ac20-164c77fc914f"
+				label="null"
+				lineNumber="5">
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="The user exists but does not have the correct externalId set. Add it for future lookups."
+			comment="If the user already exists, select him so we can update the metadata"
 			disabled="false"
-			id="4aa914bc-f122-4df3-8cc4-47d51532a258"
-			label="output/userId != null &amp;&amp; token != null"
-			lineNumber="9">
+			id="04a16ee7-ffe1-4fd3-a03d-863a90cf1334"
+			label="output/userId != null"
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
-				id="0fbe135c-ffbb-484c-bf90-56c04724285d"
-				serviceId="nabu.cms.core.crud.nodeExternalId.services.create"
-				resultName="result3716095de46d453ca448366aba320eb7"
+				id="cc20c9df-e3c4-41fb-a61b-99357297150b"
+				serviceId="nabu.cms.core.crud.account.services.get"
+				resultName="result0ad4dc384ad04bb5959fbdc42c345fd7"
 				temporaryMapping="true"
-				x="333"
-				y="101"
+				x="52"
+				y="27"
 				invocationOrder="0"
 				asynchronous="false"
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="a5a21791-e96d-4859-b972-ee0f02009483"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>token/sub</from>
-				<to>instance/externalId</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="613cce87-7285-49a7-b205-f9a3f6d5857d"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>externalIdTypeId</from>
-				<to>instance/externalIdTypeId</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="9a5eead8-c0c5-4f25-83ef-056d79131775"
+					id="13e88104-ff37-43b0-acdc-e7bd80b2406f"
 					mask="false"
 					optional="false"
 					fixedValue="false">
 				<from>output/userId</from>
-				<to>instance/nodeId</to>
+				<to>id</to>
 			</steps>
 		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
-			comment="We have already found the user, no need to proceed"
-			disabled="false"
-			id="6fc3d81c7e5e456eab546e5a153cb645"
-			label="output/userId != null"
-			lineNumber="10">
-		<count>1</count>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
-			comment="At this point we either need an openid token or we need correct userInfo to proceed. In that user info we need at least an email"
-			disabled="false"
-			id="3fe8bc4b-2ddc-4984-b2c9-2d77320a6159"
-			label="token == null &amp;&amp; userInfo/email == null"
-			lineNumber="11"
-			message="No token present and no email available" xsi:nil="true"/>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
-			disabled="false"
-			id="e6269d2d-3a15-4bd3-9a48-a023c4decf55"
-			lineNumber="12">
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
-			disabled="false"
-			id="d671a880-58f5-4d9b-b1ad-35024355a364"
-			lineNumber="13"
-			query="userInfo/email">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-				comment="If no email, we simply create an id-based user"
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="993e0468-a878-47da-b0d4-93cee8abab1c"
-				label="null"
-				lineNumber="14">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				id="93a927aa-64cc-498b-8bf9-f4eb674386f4"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result0ad4dc384ad04bb5959fbdc42c345fd7/result</from>
+			<to>account</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Map main content"
+			disabled="false"
+			id="be48daeb-9c5c-406a-a8e3-776364aca9bf"
+			lineNumber="7">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="dc0e3d49-776e-4053-ac72-6b8472702b2b"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/avatar</from>
+			<to>account/avatar</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="a6e5a0a8-c0c2-4300-9288-541728b2654a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/name</from>
+			<to>account/name</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="549f3908-16c7-4431-b115-323be6cd4e78"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/nickname</from>
+			<to>account/nickname</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="cf36451a-7de2-4437-8ff4-fe71ba980dba"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/profile</from>
+			<to>account/profile</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="66fb1393-d7d4-4e37-b205-6e1fafc2b6b5"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/picture</from>
+			<to>account/picture</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ebca0ba0-0eec-4a70-9b49-6a9cd19bf933"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/website</from>
+			<to>account/website</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="73e1ba38-9242-4e3a-bbfb-1049eb155bb3"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/email</from>
+			<to>account/email</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="5dfb545a-ccb1-4f02-81eb-4fdf1d2b2388"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/birthdate</from>
+			<to>account/birthdate</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f4e06137-362a-478b-b474-3ff8c9600a1c"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/locale</from>
+			<to>account/locale</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7918887b-f4d4-4aca-b2bd-a4cf24e2806a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/family_name</from>
+			<to>account/familyName</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="04919c26-7355-4bbd-a544-906c21cdb3a2"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/middle_name</from>
+			<to>account/middleName</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="644e6a09-df69-4273-b3f2-2f4fcf99d191"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/given_name</from>
+			<to>account/givenName</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6e491ba0-5738-4daf-9d69-c4bb24d61085"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/email_verified</from>
+			<to>account/emailVerified</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="14185f93-d833-4d34-b475-eb22cda42032"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/zoneinfo</from>
+			<to>account/timezone</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d74db794-68fe-4d68-b886-9339ab5a2f51"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/phone_number</from>
+			<to>account/phoneNumber</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="163c1114-a7f3-47d4-8c79-1a97a877833a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>userInfo/phone_number_verified</from>
+			<to>account/phoneNumberVerified</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="ee2974a6-b41e-416f-a1a2-513edd513ebe"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>realm</from>
+			<to>account/realm</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="db5fbffe-372c-4bcf-9138-ca2b4755896f"
+			label="userInfo/gender != null"
+			lineNumber="8">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="713c1a07-6f58-48f0-bb5f-84505d978096"
+				serviceId="nabu.cms.core.services.masterdata.entry.get"
+				resultName="result3c5a895d356c4ba8ad51c09d513028b2"
+				temporaryMapping="true"
+				x="85"
+				y="93"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="3e5e34fd-3a31-4cf8-b4ef-48c6ead8dbde"
-					serviceId="nabu.cms.core.crud.user.services.create"
-					resultName="resultb97da079c06b46d2b66ef35c49bae3fc"
-					temporaryMapping="true"
-					x="234"
-					y="77"
-					invocationOrder="0"
-					asynchronous="false"
-					recache="false">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-						disabled="false"
-						id="00a9bd8c-5f62-48d2-ad46-42fc1f15e181"
-						mask="false"
-						optional="false"
-						fixedValue="false">
-					<from>information/realm</from>
-					<to>instance/realm</to>
-				</steps>
+					id="39f55aa4-0219-45dc-927b-386f64bf42da"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>gender</from>
+				<to>category</to>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="15b78aa7-73a4-45e7-b51d-311d9eb1d2c3"
+					id="fee0aa10-a7bc-4366-b6ed-23ab4ab76edc"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>resultb97da079c06b46d2b66ef35c49bae3fc/created/id</from>
-				<to>output/userId</to>
+				<from>userInfo/gender</from>
+				<to>name</to>
 			</steps>
 		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4e9f86e3-c484-44c1-a4a3-098d0c0f5dea"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result3c5a895d356c4ba8ad51c09d513028b2/entryId</from>
+			<to>account/genderId</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			comment="Set alias etc if it is for a new account"
+			disabled="false"
+			id="d671a880-58f5-4d9b-b1ad-35024355a364"
+			label="account/id == null"
+			lineNumber="9"
+			query="token">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 				comment="We create an email account"
 				disabled="false"
-				id="07356fba-e010-4e02-adc5-6f27800c6a54"
-				lineNumber="15">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				id="b019c323-6d0b-492e-b068-4ca9ece6dd94"
+				label="null"
+				lineNumber="10">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Map the default stuff"
 					disabled="false"
-					id="da02ae33-ba24-4cc1-8de7-be9a8bd72f05"
-					serviceId="nabu.cms.core.crud.user.services.create"
-					resultName="result2d3094ccae0249fab01bb9d927d4ea45"
-					temporaryMapping="true"
-					x="574"
-					y="49"
-					invocationOrder="1"
-					asynchronous="false"
-					recache="false">
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					id="07356fba-e010-4e02-adc5-6f27800c6a54"
+					lineNumber="11">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
-						id="7fc0f966-c403-4922-aee3-4a3a46265ff0"
-						mask="false"
-						optional="false"
-						fixedValue="false">
-					<from>userInfo/email</from>
-					<to>instance/alias</to>
+						id="4f45c0dc-3617-4ad9-89c9-0c65c2adfc13"
+						serviceId="nabu.cms.core.services.masterdata.entry.get"
+						resultName="result7dea5f19617f4342aee75b86aa7887c8"
+						temporaryMapping="true"
+						x="18"
+						y="125"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="1a09015c-ccab-4ccd-a3db-a925a21231bb"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>aliasType</from>
+						<to>category</to>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="4a5840ff-37d3-44f1-a0d0-a6b802701262"
+							mask="false"
+							optional="false"
+							fixedValue="true">
+						<from>email</from>
+						<to>name</to>
+					</steps>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="cbdcb9b7-e6ef-4799-8fdb-3b53fa704b88"
-						mask="false"
-						optional="false"
-						fixedValue="false">
-					<from>information/realm</from>
-					<to>instance/realm</to>
-				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-						disabled="false"
-						id="d93de62e-070f-4a39-bb36-6f197e453a61"
+						id="93c578ec-9dfb-4225-a7ca-e8037a46b894"
 						mask="false"
 						optional="false"
 						fixedValue="false">
 					<from>result7dea5f19617f4342aee75b86aa7887c8/entryId</from>
-					<to>instance/aliasTypeId</to>
+					<to>account/aliasTypeId</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a136f1bc-c2dd-4d8e-8333-a1478e51ed3e"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>userInfo/email</from>
+					<to>account/alias</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="Set verified if true"
+					disabled="false"
+					id="d6d91673-9aa7-4783-927e-f08ea506e69b"
+					label="userInfo/email_verified == true"
+					lineNumber="12">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="ca4bd277-13e8-4a54-bc6a-d65ac6629484"
+						serviceId="nabu.utils.Date.now"
+						resultName="resultc6464eb0e08c4b389819b851916ef7b8"
+						temporaryMapping="true"
+						x="325"
+						y="101"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7b861b69-9362-459d-a46c-1b5ebf582ccc"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultc6464eb0e08c4b389819b851916ef7b8/date</from>
+					<to>account/verified</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="This means we are in the openid scenario, we set an openid alias type"
+				disabled="false"
+				id="993e0468-a878-47da-b0d4-93cee8abab1c"
+				lineNumber="13">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="d96f30eb-2aef-4388-a7f4-734b543c415c"
+					serviceId="nabu.utils.Date.now"
+					resultName="result147e01dbf19743d389189f9dbeb90034"
+					temporaryMapping="true"
+					x="63"
+					y="166"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="db7567b9-e397-4db6-8e21-f10d58cbd115"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result147e01dbf19743d389189f9dbeb90034/date</from>
+				<to>account/verified</to>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
-					id="4f45c0dc-3617-4ad9-89c9-0c65c2adfc13"
+					id="a0f72ec2-da12-4e7e-9d93-542fa5ac6f2b"
 					serviceId="nabu.cms.core.services.masterdata.entry.get"
-					resultName="result7dea5f19617f4342aee75b86aa7887c8"
+					resultName="result2b12e8c4181f43d78f0d0ff28481789a"
 					temporaryMapping="true"
-					x="18"
-					y="125"
+					x="241"
+					y="307"
 					invocationOrder="0"
 					asynchronous="false"
 					recache="false">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="1a09015c-ccab-4ccd-a3db-a925a21231bb"
+						id="6ac41900-363d-4a56-a3fa-9d0766f96a4d"
 						mask="false"
 						optional="false"
 						fixedValue="true">
@@ -466,21 +505,109 @@
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="4a5840ff-37d3-44f1-a0d0-a6b802701262"
+						id="757759a1-9ee6-4a57-9ef5-eb75119c3740"
 						mask="false"
 						optional="false"
 						fixedValue="true">
-					<from>email</from>
+					<from>openid</from>
 					<to>name</to>
 				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="b4134547-8f29-4189-8e78-09c72fea6586"
+					id="f4dc0169-1a61-43e4-9330-64ba397a30d3"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>result2d3094ccae0249fab01bb9d927d4ea45/created/id</from>
+				<from>result2b12e8c4181f43d78f0d0ff28481789a/entryId</from>
+				<to>account/aliasTypeId</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="f7d99975-6ea9-4897-bd7d-c0e60b08264e"
+			lineNumber="14"
+			query="account/id">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Create the account"
+				disabled="false"
+				id="451b8d29-3153-4e68-aee7-b68ee70dd447"
+				label="null"
+				lineNumber="15">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="f59fe3cd-3f10-4f8b-8a34-6eee236be62d"
+					serviceId="nabu.cms.core.crud.account.services.create"
+					resultName="resultbbc4aba401394d88bbb800cdc151b574"
+					temporaryMapping="true"
+					x="59"
+					y="25"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c260b0cb-265c-4bf3-a19c-a281843316c1"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>account</from>
+					<to>instance</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="57877433-42d9-4858-bf26-4d33d37fc2a4"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultbbc4aba401394d88bbb800cdc151b574/created/id</from>
+				<to>output/userId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Update the account"
+				disabled="false"
+				id="7bdc2488-e86d-459f-83b4-a08dcdda48ac"
+				lineNumber="16">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="0fe34637-50cc-45bc-9123-0eeda7817ae7"
+					serviceId="nabu.cms.core.crud.account.services.update"
+					resultName="resultd84248c7e680405296f4d69a72f12ce8"
+					temporaryMapping="true"
+					x="60"
+					y="46"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="19a48420-80d1-4b30-a590-e2b5ab3f1e6b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>account</from>
+					<to>instance</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4cf3319f-846b-48fe-84d4-7aedfc5a6602"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>account/id</from>
+					<to>id</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a5b0be7f-ddfd-4743-85ed-d4041112462d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>account/id</from>
 				<to>output/userId</to>
 			</steps>
 		</steps>
@@ -489,8 +616,8 @@
 			comment="Annotate the user if we have a token"
 			disabled="false"
 			id="c48525c5248243198b23f4d3f5f66b74"
-			label="token"
-			lineNumber="16">
+			label="externalId == null &amp;&amp; token != null"
+			lineNumber="17">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7a47b6e8b06849c4a14cc41697ec6b24"
@@ -528,52 +655,6 @@
 					fixedValue="false">
 				<from>output/userId</from>
 				<to>instance/nodeId</to>
-			</steps>
-		</steps>
-	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="Enrich the user account if possible"
-			disabled="false"
-			id="c11c8ec9-8b6e-4491-a41e-d0ddac0bfd22"
-			label="userInfo != null &amp;&amp; enrichUserId != null"
-			lineNumber="17">
-		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-				disabled="false"
-				id="2ac03946-b015-41c1-9fb7-eab8ee54a84e"
-				serviceId="nabu.cms.oauth2.client.specs.enrichUser"
-				resultName="result9c15889e03e6401492255b6a02094a28"
-				temporaryMapping="true"
-				x="216"
-				y="114"
-				invocationOrder="0"
-				asynchronous="false"
-				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="b8e6c980-fb1f-4373-b11a-39e28b77592a"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>output/userId</from>
-				<to>userId</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="ca4c026a-7667-43fd-b174-d23260704984"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>userInfo</from>
-				<to>userInfo</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="114ebe31-0e36-4342-929c-dbe9beafda96"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>enrichUserId</from>
-				<to>implementationId</to>
 			</steps>
 		</steps>
 	</steps>

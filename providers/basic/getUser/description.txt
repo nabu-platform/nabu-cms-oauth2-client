@@ -1,0 +1,14 @@
+This implementation assumes you are using the Account extension provided by cms core.
+If you are using your own account extension, you can reuse the getExistingUser logic and then build your own.
+
+If you log in via an openid provider, there are two possibilities:
+
+- we try best effort to create an email-based account
+- we always create an id account
+
+Email accounts are more easily upgraded to a local account by adding a password. You can also log in via multiple providers and get the same account. They are more readable in event streams.
+However, it is less predictable in use (some accounts will be email, some id based), we are at the whim of the openid provider if it gets updated, questions arise about verified or not verified emails.
+
+It is also tricky to see how we evolve our own data when you log in via a remote system: what if you updated an account field locally in our system and get an older/other version back from openid?
+In conclusion, we have chosen for specific alias type of openid with a regular uuid as alias. This allows us to pinpoint these accounts and (for instance) stop updates on local account values (because they are managed elsewhere)
+It can also allow specific lookups when users log in with another openid provider but linked to for example the same email account.
