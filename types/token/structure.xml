@@ -1,0 +1,8 @@
+<structure name="token">
+    <field name="access_token" type="java.lang.String"/>
+    <field name="token_type" type="java.lang.String"/>
+    <field minOccurs="0" name="refresh_token" type="java.lang.String"/>
+    <field minOccurs="0" name="scope" type="java.lang.String"/>
+    <field minOccurs="0" name="expires_in" type="java.lang.Long"/>
+    <field comment="Can contain the openid token" minOccurs="0" name="id_token" type="java.lang.String"/>
+</structure>

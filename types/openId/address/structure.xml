@@ -1,0 +1,8 @@
+<structure name="address">
+    <field comment="Full mailing address, formatted for display or use on a mailing label. This field MAY contain multiple lines, separated by newlines. Newlines can be represented either as a carriage return/line feed pair (&quot;\r\n&quot;) or as a single line feed character (&quot;\n&quot;). " minOccurs="0" name="formatted" type="java.lang.String"/>
+    <field comment="Full street address component, which MAY include house number, street name, Post Office Box, and multi-line extended street address information. This field MAY contain multiple lines, separated by newlines. Newlines can be represented either as a carriage return/line feed pair (&quot;\r\n&quot;) or as a single line feed character (&quot;\n&quot;). " minOccurs="0" name="street_address" type="java.lang.String"/>
+    <field comment="City or locality component. " minOccurs="0" name="locality" type="java.lang.String"/>
+    <field comment="State, province, prefecture, or region component. " minOccurs="0" name="region" type="java.lang.String"/>
+    <field comment="Zip code or postal code component. " minOccurs="0" name="postal_code" type="java.lang.String"/>
+    <field comment="Country name component. " minOccurs="0" name="country" type="java.lang.String"/>
+</structure>

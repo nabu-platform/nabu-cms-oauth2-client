@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T08:16:10.376+02:00" lastModified="2022-04-23T08:40:41.605+02:00" leaf="true" version="11">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.cms.oauth2.client.database.types.openidProvider</references>
+    <references>nabu.utils.String.join</references>
+    <references>nabu.cms.oauth2.client.types.discovery</references>
+    <references>java.net.URI</references>
+    <references>nabu.cms.oauth2.client.services.discovery.get</references>
+</node>

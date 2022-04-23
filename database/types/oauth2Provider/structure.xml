@@ -1,0 +1,21 @@
+<structure collectionName="oauth2Providers" name="oauth2Provider">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field comment="A human readable name for this provider" name="name" type="java.lang.String"/>
+    <field comment="The application this provider is active on" name="webApplicationId" type="java.lang.String"/>
+    <field comment="We assume you are capturing the response of the OAuth2 provider in your own application. This is the path to the correct file (defaults to &quot;/&quot;)" minOccurs="0" name="processPath" type="java.lang.String"/>
+    <field comment="Once a user requests a login, how long is that particular request valid?" minOccurs="0" name="maximumLoginWait" type="be.nabu.libs.types.base.Duration"/>
+    <field comment="You may need to use a custom http client to get this to work" minOccurs="0" name="httpClientId" type="java.lang.String"/>
+    <field comment="A space separated list of scopes you want to request" minOccurs="0" name="requestedScopes" type="java.lang.String"/>
+    <field comment="A space separated list of scopes that exist" minOccurs="0" name="availableScopes" type="java.lang.String"/>
+    <field minOccurs="0" name="clientId" type="java.lang.String"/>
+    <field minOccurs="0" name="clientSecret" type="java.lang.String"/>
+    <field comment="The endpoint where we can resolve the token." minOccurs="0" name="tokenEndpoint" type="java.net.URI"/>
+    <field comment="The endpoint where the user is redirected to to log in" minOccurs="0" name="authorizationEndpoint" type="java.net.URI"/>
+    <field comment="Might be specific to a resource" minOccurs="0" name="resource" type="java.lang.String"/>
+    <field comment="Defaults to POST. But some, like facebook, use a GET. This field is case insenstive" minOccurs="0" name="tokenMethod" type="java.lang.String"/>
+    <field comment="The service that can be used to resolve the user info" minOccurs="0" name="userInfoServiceId" type="java.lang.String"/>
+    <field comment="The service that can be used to get the token" minOccurs="0" name="tokenServiceId" type="java.lang.String"/>
+    <field comment="The service that can be used to get the redirect uri" minOccurs="0" name="redirectUriServiceId" type="java.lang.String"/>
+    <field comment="force,auto" minOccurs="0" name="approvalPrompt" type="java.lang.String"/>
+    <field comment="online,offline" minOccurs="0" name="accessType" type="java.lang.String"/>
+</structure>

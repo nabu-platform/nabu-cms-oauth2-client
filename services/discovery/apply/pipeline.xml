@@ -1,0 +1,10 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="discoveryUri" type="java.net.URI"/>
+        <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.database.types.openidProvider" duplicate="id" name="provider"/>
+    </structure>
+    <structure name="output">
+        <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.database.types.openidProvider" duplicate="id" name="provider"/>
+    </structure>
+    <structure definition="nabu.cms.oauth2.client.types.discovery" name="discovery"/>
+</structure>

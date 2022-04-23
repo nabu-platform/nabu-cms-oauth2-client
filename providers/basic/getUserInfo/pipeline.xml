@@ -1,0 +1,7 @@
+<structure interface="nabu.cms.oauth2.client.specs.getUserInfo" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.openidProvider.types.output" duplicate="id" name="provider"/>
+    <structure definition="be.nabu.libs.http.api.HTTPResponse" minOccurs="0" name="response"/>
+    <structure definition="be.nabu.libs.http.jwt.JWTBody" minOccurs="0" name="jwt"/>
+</structure>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.iface.ServiceInterfaceManager" created="2022-04-22T17:22:28.785+02:00" lastModified="2022-04-22T17:23:10.807+02:00" leaf="true" version="4">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.util.UUID</references>
+    <references>java.net.URI</references>
+</node>

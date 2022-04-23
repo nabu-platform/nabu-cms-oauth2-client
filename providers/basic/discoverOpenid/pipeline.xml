@@ -1,0 +1,5 @@
+<structure interface="nabu.cms.oauth2.client.specs.discover" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.openidProvider.types.output" duplicate="id" name="provider"/>
+</structure>

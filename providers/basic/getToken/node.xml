@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T19:20:45.907+02:00" lastModified="2022-04-23T08:55:57.757+02:00" leaf="true" version="48">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.List.add</references>
+    <references>nabu.utils.types.UriComponents</references>
+    <references>java.util.Date</references>
+    <references>nabu.data.mime.Services.newContentPart</references>
+    <references>nabu.data.mime.Services.getContent</references>
+    <references>nabu.utils.Uri.fromComponents</references>
+    <references>nabu.cms.oauth2.client.types.simple.grantType</references>
+    <references>nabu.utils.List.getAll</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output</references>
+    <references>nabu.utils.Uri.encodeUri</references>
+    <references>nabu.utils.String.join</references>
+    <references>be.nabu.libs.http.api.HTTPResponse</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
+    <references>nabu.utils.String.toBytes</references>
+    <references>java.lang.String</references>
+    <references>java.net.URI</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.data.json.Services.unmarshal</references>
+    <references>nabu.cms.oauth2.client.specs.getToken</references>
+    <references>be.nabu.utils.mime.api.Part</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.Uri.toComponents</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.utils.Uri.encodeUriComponent</references>
+    <references>java.util.UUID</references>
+    <references>nabu.protocols.http.client.Services.execute</references>
+    <references>nabu.data.mime.Services.newEmptyPart</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.get</references>
+    <references>nabu.data.mime.Services.newHeader</references>
+</node>

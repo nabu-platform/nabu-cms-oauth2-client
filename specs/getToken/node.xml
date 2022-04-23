@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.iface.ServiceInterfaceManager" created="2022-04-22T17:30:48.835+02:00" lastModified="2022-04-22T19:35:30.975+02:00" leaf="true" version="12">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>java.util.UUID</references>
+    <references>java.lang.String</references>
+    <references>nabu.cms.oauth2.client.types.simple.grantType</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
+</node>

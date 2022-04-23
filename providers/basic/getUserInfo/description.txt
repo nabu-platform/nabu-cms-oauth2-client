@@ -1,0 +1,4 @@
+https://openid.net/specs/openid-connect-basic-1_0.html
+
+2.3.2: Due to the possibility of token substitution attacks, the UserInfo Response is not guaranteed to be about the End-User identified by the sub (subject) element of the ID Token. The sub Claim in the UserInfo Response MUST be verified to exactly match the sub Claim in the ID Token; if they do not match, the UserInfo Response values MUST NOT be used.
+

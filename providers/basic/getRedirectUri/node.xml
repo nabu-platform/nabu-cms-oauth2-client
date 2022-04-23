@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2022-04-23T08:52:21.758+02:00" leaf="true" version="42">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.types.UriComponents</references>
+    <references>nabu.utils.Server.uuid</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.Uri.toComponents</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.utils.Uri.fromComponents</references>
+    <references>nabu.utils.Uri.encodeUriComponent</references>
+    <references>java.util.UUID</references>
+    <references>nabu.utils.Uri.encodeUri</references>
+    <references>nabu.services.jdbc.Services.insert</references>
+    <references>nabu.cms.oauth2.client.database.types.oauth2ProviderLogin</references>
+    <references>nabu.web.application.Services.information</references>
+    <references>nabu.utils.String.replace</references>
+    <references>java.net.URI</references>
+    <references>java.lang.String</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
+    <references>nabu.cms.oauth2.client.specs.getRedirectUri</references>
+    <references>nabu.web.application.types.WebApplicationInformation</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+</node>

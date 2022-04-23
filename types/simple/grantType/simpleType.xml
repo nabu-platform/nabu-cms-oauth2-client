@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simpleType>
+    <enumerations>implicit</enumerations>
+    <enumerations>authorization_code</enumerations>
+    <enumerations>client_credentials</enumerations>
+    <enumerations>password</enumerations>
+    <enumerations>refresh_token</enumerations>
+    <enumerations>urn:ietf:params:oauth:grant-type:device_code</enumerations>
+    <properties>
+        <property key="actualType"/>
+        <property key="alias"/>
+        <property key="name"/>
+        <property key="namespace"/>
+        <property key="comment"/>
+        <property key="minOccurs"/>
+        <property key="maxOccurs"/>
+        <property key="nillable"/>
+        <property key="collectionName"/>
+        <property key="unique"/>
+        <property key="scope"/>
+        <property key="identifiable"/>
+        <property key="label"/>
+        <property key="dynamicName"/>
+        <property key="foreignKey"/>
+        <property key="foreignName"/>
+        <property key="primaryKey"/>
+        <property key="indexed"/>
+        <property key="generated"/>
+        <property key="aggregation"/>
+        <property key="calculation"/>
+        <property key="uuidFormat"/>
+        <property key="environmentSpecific"/>
+        <property key="pattern"/>
+        <property key="minLength"/>
+        <property key="maxLength"/>
+        <property key="length"/>
+        <property key="collectionFormat"/>
+        <property key="synchronization"/>
+        <property key="token"/>
+    </properties>
+</simpleType>

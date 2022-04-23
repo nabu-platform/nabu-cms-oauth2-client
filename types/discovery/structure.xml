@@ -1,0 +1,29 @@
+<structure name="discovery">
+    <field name="issuer" type="java.lang.String"/>
+    <field name="authorization_endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="device_authorization_endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="device_authorize_endpoint" type="java.lang.String"/>
+    <field name="token_endpoint" type="java.lang.String"/>
+    <field name="userinfo_endpoint" type="java.lang.String"/>
+    <field name="revocation_endpoint" type="java.lang.String"/>
+    <field name="jwks_uri" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="response_types_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="response_modes_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="subject_types_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="id_token_signing_alg_values_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="scopes_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="token_endpoint_auth_methods_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="claims_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="code_challenge_methods_supported" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="grant_types_supported" type="java.lang.String"/>
+    <field minOccurs="0" name="poc" type="java.lang.String"/>
+    <field minOccurs="0" name="name" type="java.lang.String"/>
+    <field minOccurs="0" name="introspect_endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="registration_endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="user_authorize_endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="claims_parameter_supported" type="java.lang.Boolean"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="userinfo_signing_alg_values_supported" type="java.lang.String"/>
+    <field minOccurs="0" name="request_parameter_supported" type="java.lang.Boolean"/>
+    <field minOccurs="0" name="end_session_endpoint" type="java.lang.String"/>
+    <field minOccurs="0" name="frontchannel_logout_endpoint" type="java.lang.String"/>
+</structure>

@@ -1,0 +1,8 @@
+<structure comment="Calculates the correct redirect uri for a given provider.&#10;Some providers have special requirements (some additional fields must be added, some fields musn't exist etc)" name="pipeline">
+    <structure name="input">
+        <field name="oauth2ProviderId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    </structure>
+    <structure name="output">
+        <field name="redirectUri" type="java.net.URI"/>
+    </structure>
+</structure>

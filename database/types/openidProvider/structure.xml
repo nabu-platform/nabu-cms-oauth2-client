@@ -1,0 +1,6 @@
+<structure collectionName="openidProviders" duplicate="id" name="openidProvider" superType="nabu.cms.oauth2.client.database.types.oauth2Provider">
+    <field comment="Where the jwks endpoint lives" minOccurs="0" name="jwksEndpoint" type="java.net.URI"/>
+    <field comment="Set the discovery endpoint here if known" minOccurs="0" name="discoveryEndpoint" type="java.net.URI"/>
+    <field comment="The user info call" minOccurs="0" name="userInfoEndpoint" type="java.net.URI"/>
+    <field comment="In some cases you want to allow the JWT tokens directly without wrapping them in our own. E.g. in API cases" minOccurs="0" name="allowAsBearer" type="java.lang.Boolean"/>
+</structure>

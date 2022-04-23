@@ -1,0 +1,8 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="discoveryUri" type="java.net.URI"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.cms.oauth2.client.types.discovery" name="discovery"/>
+    </structure>
+</structure>
