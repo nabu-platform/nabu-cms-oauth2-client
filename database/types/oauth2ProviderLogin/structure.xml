@@ -6,9 +6,10 @@
     <field comment="When it was used" minOccurs="0" name="used" timezone="UTC" type="java.util.Date"/>
     <field comment="The token that was returned" minOccurs="0" name="token" type="java.lang.String"/>
     <field comment="If available" minOccurs="0" name="refreshToken" type="java.lang.String"/>
+    <field minOccurs="0" name="tokenType" type="java.lang.String"/>
     <field comment="The id of the account in the remote system" minOccurs="0" name="accountId" type="java.lang.String"/>
     <field comment="For some providers (e.g. microsoft), a token is always with regards to a specific resource." minOccurs="0" name="resource" type="java.lang.String"/>
     <field aggregation="composite" comment="The user this login was for" foreignKey="nabu.cms.core.types.emodel.core.User:id" minOccurs="0" name="userId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <field comment="When the token expires" minOccurs="0" name="expired" timezone="UTC" type="java.util.Date"/>
+    <field comment="When the token expires" minOccurs="0" name="expires" timezone="UTC" type="java.util.Date"/>
     <field comment="The scopes granted to this login" minOccurs="0" name="grantedScopes" type="java.lang.String"/>
 </structure>

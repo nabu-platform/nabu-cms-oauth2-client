@@ -318,11 +318,65 @@
 			<from>userInfo/sub</from>
 			<to>login/accountId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e4d20760-06da-47d9-b0eb-10152d5c655b"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>token/token_type</from>
+			<to>login/tokenType</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="b580c3a2-04cd-4835-a3a7-5be33d08e2b1"
+			label="token/expires_in != null"
+			lineNumber="9">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="da510a29-2b26-4a49-8e43-26f7040d2a76"
+				serviceId="nabu.utils.Date.increment"
+				resultName="result47d85be297c949b4aaa7c0456b822e9e"
+				temporaryMapping="true"
+				x="67"
+				y="24"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="bfa08888-0254-4568-81a6-994935146655"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>token/expires_in</from>
+				<to>increment</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="5cfa5493-3d5a-48b7-9249-9619c128e1b6"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>SECONDS</from>
+				<to>unit</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="a39a4d57-4c0f-4681-8d49-34543cae25e6"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result47d85be297c949b4aaa7c0456b822e9e/date</from>
+			<to>login/expires</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="5f595270-e783-4945-bb24-f01d69f718ec"
-			lineNumber="9">
+			lineNumber="10">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d670194e-8090-4602-9990-d4d41b0790f4"

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:09:59.375+02:00" lastModified="2022-04-23T12:13:49.418+02:00" leaf="true" version="8">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:09:59.375+02:00" lastModified="2022-04-25T11:53:13.104+02:00" leaf="true" version="27">
     <comment>Get an active token for the given user</comment>
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
+    <references>nabu.utils.Date.diff</references>
+    <references>java.lang.Long</references>
+    <references>nabu.cms.oauth2.client.providers.getToken</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
     <references>java.util.UUID</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.list</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output</references>
 </node>

@@ -3,5 +3,10 @@
         <field name="oauth2ProviderId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <field name="userId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     </structure>
-    <structure name="output"/>
+    <structure name="output">
+        <structure definition="nabu.cms.oauth2.client.types.token" minOccurs="0" name="token"/>
+    </structure>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" minOccurs="0" name="last"/>
+    <field minOccurs="0" name="expires" type="java.lang.Long"/>
+    <field minOccurs="0" name="now" type="java.lang.Long"/>
 </structure>

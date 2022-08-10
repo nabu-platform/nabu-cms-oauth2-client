@@ -65,9 +65,10 @@
 			lineNumber="3"
 			message="Login not found" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			comment="For refresh token, expiry is almost expected"
 			disabled="false"
 			id="87996f03-19be-48d7-8ad9-43d82a6bff48"
-			label="login/expired != null &amp;&amp; login/expired &gt; now"
+			label="input/grantType != &quot;refresh_token&quot; &amp;&amp; login/expires != null &amp;&amp; login/expires &lt; now"
 			lineNumber="4"
 			message="Link expired" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"

@@ -2,4 +2,236 @@
 		disabled="false"
 		id="8f6eccc8-bb4e-4bf6-a3e1-a09f28501196"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="bd103a82-3834-40c1-9358-44a277648c6e"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="4f4a7010-f959-4a54-bcf8-da3cc4b86407"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.list"
+				resultName="result94d4c6488c714dd19209420151084b11"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b5e251ea-9612-429e-97bc-0d8b92cc5a2d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/userId</from>
+				<to>filter/userId[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1852c47d-83f2-44b1-8476-95077153a98d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/oauth2ProviderId</from>
+				<to>filter/oauth2ProviderId[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="259a2025-cffa-44ad-a245-2174b8517843"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>created desc</from>
+				<to>orderBy[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c69fd0da-9cb1-46c0-9c7f-34823bb34ece"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>1</from>
+				<to>limit</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="13a19c10-f9a3-4e9f-b2b9-72bce9d7f751"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>filter/hasToken</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d4c7dc62-2d4a-4fa0-8496-3f74eb765457"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result94d4c6488c714dd19209420151084b11/results[0]</from>
+			<to>last</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Map the output"
+			disabled="false"
+			id="49120e1d-dcd6-42be-a213-15a063d33930"
+			label="last"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d90c5c6c-7be6-40b8-bded-4d91fcd0d3e9"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>last/token</from>
+			<to>output/token/access_token</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="cff19c7c-892d-49c8-afaf-0861e99d3d9b"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>last/refreshToken</from>
+			<to>output/token/refresh_token</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="99728c1f-cba3-4089-bff9-97b2db62c7dc"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>last/tokenType</from>
+			<to>output/token/token_type</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d69fb8c6-5090-49a5-867f-740a8f9fec5c"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>last/grantedScopes</from>
+			<to>output/token/scope</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="dd51be55-5e19-4d3d-9a29-88a0d03786bb"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>last/token</from>
+			<to>output/token/id_token</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="804e7304-ea62-4c3b-990f-e0f778b6c594"
+			label="last/expires != null"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="5b422d07-8354-433f-a8a3-c7d43bf887b9"
+				serviceId="nabu.utils.Date.diff"
+				resultName="resultadbae8a0139d476299419eda7057ed00"
+				temporaryMapping="true"
+				x="49"
+				y="37"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6f199986-5a79-45e5-ac81-167e8a86e15b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>last/expires</from>
+				<to>end</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7639cfcd-8ae3-4ec0-b13e-a4cb1a592441"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>SECONDS</from>
+				<to>unit</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7ef1ec92-ec41-49b8-bac7-c122ad40906a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultadbae8a0139d476299419eda7057ed00/diff</from>
+			<to>output/token/expires_in</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="If the token is about to expire (or already expired), request new"
+			disabled="false"
+			id="34b4b2f3-7fa6-40b6-866c-bd47c38dfcb8"
+			label="output/token/expires_in != null &amp;&amp; output/token/expires_in &lt; 60 &amp;&amp; last/refreshToken != null"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="c1724c49-6b38-4743-bc35-aa19c4af78e7"
+				serviceId="nabu.cms.oauth2.client.providers.getToken"
+				resultName="result081c7cd61a3a4887b63d6919398a6e6a"
+				temporaryMapping="true"
+				x="160"
+				y="76"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3ffd732e-92e3-4430-855b-4801e2716ac8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>last/id</from>
+				<to>oauth2ProviderLoginId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="af4bcc89-f093-42f0-bbba-1a0002a87ef8"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>last/refreshToken</from>
+				<to>code</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e0a699f8-38e4-41a2-a3bd-ff4567d3b5b4"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>refresh_token</from>
+				<to>grantType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="912c229b-0a2b-478f-9a71-7f6e13f1d244"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>last/resource</from>
+				<to>resource</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="86a9e284-f214-41be-9e59-8c902dedf169"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result081c7cd61a3a4887b63d6919398a6e6a/token</from>
+			<to>output/token</to>
+		</steps>
+	</steps>
 </sequence>
