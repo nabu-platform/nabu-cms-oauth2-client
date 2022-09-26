@@ -258,6 +258,15 @@
 					<from>nabu.cms.oauth2.client.types.userInfo</from>
 					<to>type</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ed565207-b48f-4474-8ab2-39d540737d65"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>true</from>
+					<to>ignoreUndefinedFields</to>
+				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"

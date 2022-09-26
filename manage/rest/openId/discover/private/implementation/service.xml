@@ -1,0 +1,127 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="d40dadb7-0ca6-4084-84ab-e9e3f5c2f850"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="7b0b7da4-5d4b-423e-a990-82449092f12e"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="16da20d3-02f4-4daf-8f17-b896d9ade2a3"
+				serviceId="nabu.cms.oauth2.client.crud.openidProvider.services.get"
+				resultName="result2982c594468e4d74a7bf944d91fa149b"
+				temporaryMapping="true"
+				x="51"
+				y="70"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ad82a201-7d13-484f-82f3-f87c615f77ea"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/path/openIdProviderId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e0e8732b-b397-4e01-8450-6d3db65b6c4e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result2982c594468e4d74a7bf944d91fa149b/result</from>
+			<to>provider</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="38969d37-b37a-4193-82df-489ceedefd93"
+			label="!provider"
+			lineNumber="3"
+			code="404" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="9aa2a1a9-3558-43ee-a3c0-df902345664f"
+			label="input/content/newDiscoveryEndpoint != null"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="0d5137f6-f9bf-418b-a295-3654b710884e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>input/content/newDiscoveryEndpoint</from>
+			<to>provider/discoveryEndpoint</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="245fde69-bd5e-408f-817a-d2a142509c98"
+			label="provider/discoveryEndpoint != null"
+			lineNumber="5">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="0d070dfa-7726-418a-9f7a-7406fd0e38fe"
+				serviceId="nabu.cms.oauth2.client.services.discovery.apply"
+				resultName="result1d8d8744cf6941e8a261a70a81bc9de4"
+				temporaryMapping="true"
+				x="55"
+				y="45"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="af296c58-8923-4339-9d44-fbd2bca44d9f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>provider</from>
+				<to>provider</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2a793ca1-4270-4bad-a417-6cc21fa2f934"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>provider/discoveryEndpoint</from>
+				<to>discoveryUri</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="48c22651-b170-474d-a1fc-e60f0a351d8e"
+				serviceId="nabu.cms.oauth2.client.crud.openidProvider.services.update"
+				resultName="result90e0343033cc4170ae3b9b83ed5a1f07"
+				temporaryMapping="true"
+				x="524"
+				y="167"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b22b1c7f-cafe-4bc7-9d0e-1757bed338ca"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result1d8d8744cf6941e8a261a70a81bc9de4/provider</from>
+				<to>instance</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d34641a7-a840-4426-b365-2984b7effc91"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result1d8d8744cf6941e8a261a70a81bc9de4/provider/id</from>
+				<to>id</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

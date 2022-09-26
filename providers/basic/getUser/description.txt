@@ -12,3 +12,6 @@ However, it is less predictable in use (some accounts will be email, some id bas
 It is also tricky to see how we evolve our own data when you log in via a remote system: what if you updated an account field locally in our system and get an older/other version back from openid?
 In conclusion, we have chosen for specific alias type of openid with a regular uuid as alias. This allows us to pinpoint these accounts and (for instance) stop updates on local account values (because they are managed elsewhere)
 It can also allow specific lookups when users log in with another openid provider but linked to for example the same email account.
+
+
+OPENID_NEW_USER_AS_OPENID_ALIAS

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<webModule>
+    <webFragments>nabu.cms.oauth2.client.manage.crud.oauth2Provider</webFragments>
+    <webFragments>nabu.cms.oauth2.client.manage.crud.oauth2ProviderLogin</webFragments>
+    <webFragments>nabu.cms.oauth2.client.manage.crud.openidProvider</webFragments>
+    <webFragments>nabu.cms.oauth2.client.manage.rest.openId.discover</webFragments>
+</webModule>

@@ -3,10 +3,46 @@
 		id="c354b982-e80d-449e-bb5e-b550bf44d52d"
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="Get the provider"
+			disabled="false"
+			id="69c860a8-52a6-431e-b466-e508f5177c3b"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f8d21746-373f-4ac2-8b17-471912024d2e"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2Provider.services.get"
+				resultName="resultbd76e420eeb24503a692f53504f30980"
+				temporaryMapping="true"
+				x="72"
+				y="93"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e0391941-d789-42f8-ac04-e37901a65871"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/oauth2ProviderId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="722e0ccc-98f2-42c0-ab7b-389e862d17ac"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultbd76e420eeb24503a692f53504f30980/result</from>
+			<to>provider</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="8cd5fe23-039a-4418-84bf-2d2cd8f506eb"
 			label="input/token/id_token != null"
-			lineNumber="2">
+			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="b88bfe0d-5bbb-490b-930d-d8349ce27efb"
@@ -51,7 +87,7 @@
 			disabled="false"
 			id="1fdab5312b564f6299b2bd354983cf76"
 			label="token"
-			lineNumber="3">
+			lineNumber="4">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="725315d3c4bf4d85b13deef730e0f8da"
@@ -153,7 +189,7 @@
 			comment="Get information"
 			disabled="false"
 			id="67d2fb6c-a7bd-459f-a550-23a31ddd4508"
-			lineNumber="4">
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="a9930d79-d7ae-4917-a806-2e8fdad2d3cc"
@@ -207,8 +243,8 @@
 			comment="Try to find the account by email"
 			disabled="false"
 			id="017c65f4-c304-4bc5-b067-fc9f3c0d2e89"
-			label="userInfo/email != null"
-			lineNumber="5">
+			label="output/userId == null &amp;&amp; userInfo/email != null"
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="494a6ea7-8a03-4edb-a2e4-23424ebce00b"
@@ -253,8 +289,8 @@
 			comment="The user exists but does not have the correct externalId set. Add it for future lookups."
 			disabled="false"
 			id="4aa914bc-f122-4df3-8cc4-47d51532a258"
-			label="output/userId != null &amp;&amp; token != null"
-			lineNumber="6">
+			label="output/userId != null &amp;&amp; token != null &amp;&amp; output/externalId == null"
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="0fbe135c-ffbb-484c-bf90-56c04724285d"

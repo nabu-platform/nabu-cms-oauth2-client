@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:36:35.384+02:00" lastModified="2022-04-23T17:51:10.611+02:00" leaf="true" version="60">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:36:35.384+02:00" lastModified="2022-08-10T13:56:05.969+02:00" leaf="true" version="63">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
@@ -14,6 +14,7 @@
     <references>nabu.cms.oauth2.client.types.userInfo</references>
     <references>be.nabu.libs.http.jwt.JWTBody</references>
     <references>java.lang.String</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
     <references>nabu.web.application.types.WebApplicationInformation</references>
     <references>nabu.cms.core.crud.user.services.list</references>
     <references>nabu.web.application.jwt.Services.unmarshal</references>

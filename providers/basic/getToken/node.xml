@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T19:20:45.907+02:00" lastModified="2022-08-10T10:17:19.674+02:00" leaf="true" version="51">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T19:20:45.907+02:00" lastModified="2022-09-26T10:18:48.791+02:00" leaf="true" version="53">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
-    <references>nabu.utils.List.add</references>
     <references>nabu.utils.types.UriComponents</references>
     <references>java.util.Date</references>
     <references>nabu.data.mime.Services.newContentPart</references>

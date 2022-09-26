@@ -1,4 +1,0 @@
-<structure interface="nabu.cms.oauth2.client.web.rest.provider.list:api" name="pipeline">
-    <structure name="input"/>
-    <structure name="output"/>
-</structure>

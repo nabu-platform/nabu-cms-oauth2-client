@@ -95,6 +95,15 @@
 				<from>nabu.cms.oauth2.client.types.discovery</from>
 				<to>type</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7f5c8d7c-e5e3-442d-a2d8-fd5da5e91d68"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>ignoreUndefinedFields</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

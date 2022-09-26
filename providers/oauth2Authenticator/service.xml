@@ -36,6 +36,27 @@
 			<from>result557c702d06eb41c0a61b92b1ccd720ad/result</from>
 			<to>login</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="389829f1-db3f-4366-a1d0-50fd26ccbccd"
+				serviceId="nabu.utils.Date.now"
+				resultName="result5574723b20a04635b1cbf001127c5051"
+				temporaryMapping="true"
+				x="412"
+				y="222"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="228b2452-6068-47db-b173-b83e8ed23b6c"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result5574723b20a04635b1cbf001127c5051/date</from>
+			<to>now</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			description="=&quot;Invalid login details: &quot; + input/credentials/name"
@@ -44,10 +65,16 @@
 			label="!login"
 			lineNumber="3"
 			message="Invalid login details" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
+			id="16349ef5-8296-4fde-a192-3d3489f1cc71"
+			label="login/expires != null &amp;&amp; login/expires &lt; now"
+			lineNumber="4"
+			message="The credentials are expired" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="1bdd4cd2-dd99-4f69-97cb-cfb30e0e7c4e"
-			lineNumber="4">
+			lineNumber="5">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="b4fab97d-f792-4a6f-9512-ac0091405649"
@@ -100,7 +127,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="96053940-9985-4b61-86a2-70ae4349890e"
-			lineNumber="5">
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="2abe1926-178c-4f63-a8ac-ced06911a3b4"
@@ -144,7 +171,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="37e37743-47ec-4081-a5c8-6a031d68cf43"
-			lineNumber="6">
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7e9059b9-a79f-4041-bdb9-27be0eff1c92"
@@ -198,7 +225,7 @@
 			disabled="false"
 			id="569a219c-b2a8-4530-8c01-eb9d5d50daf8"
 			label="userId != null"
-			lineNumber="7">
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="cf784773-bcaf-461c-a0d9-7183fcc5ee29"
@@ -222,15 +249,6 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="88c5b76e-4b14-442f-bfab-6be12fa04bb7"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>result60731fea698d45ceb2d0dc45f3fa0fe4/result/verificationCode</from>
-			<to>output/token/name</to>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
 				id="5477bb58-fdc4-4d26-9b9b-0debd9eee487"
 				mask="false"
 				optional="false"
@@ -247,11 +265,20 @@
 			<from>result60731fea698d45ceb2d0dc45f3fa0fe4/result/id</from>
 			<to>output/token/authenticationId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4b0d9cf6-d553-4399-905b-19573298447a"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result60731fea698d45ceb2d0dc45f3fa0fe4/result/alias</from>
+			<to>output/token/name</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="cfa1c481-4613-4289-ae04-db3afe90b225"
-			lineNumber="8">
+			lineNumber="9">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="869a3cc2-1438-4d52-a9cf-a372b068b765"
@@ -332,7 +359,7 @@
 			disabled="false"
 			id="b580c3a2-04cd-4835-a3a7-5be33d08e2b1"
 			label="token/expires_in != null"
-			lineNumber="9">
+			lineNumber="10">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="da510a29-2b26-4a49-8e43-26f7040d2a76"
@@ -376,7 +403,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="5f595270-e783-4945-bb24-f01d69f718ec"
-			lineNumber="10">
+			lineNumber="11">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d670194e-8090-4602-9990-d4d41b0790f4"

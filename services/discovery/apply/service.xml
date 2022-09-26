@@ -134,6 +134,15 @@
 			<from>discovery/userinfo_endpoint</from>
 			<to>output/provider/userInfoEndpoint</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="b5b5877c-fe55-4331-ba18-cbc2386e2b8e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>discovery/issuer</from>
+			<to>output/provider/issuer</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="If no scopes are requested yet, fill in all the user info scopes at least"

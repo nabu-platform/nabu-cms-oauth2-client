@@ -1,0 +1,7 @@
+<structure interface="nabu.cms.oauth2.client.specs.discoverOpenid" name="pipeline">
+    <structure name="input">
+        <field comment="The domain can be found in azure AD" name="tenantName" type="java.lang.String"/>
+    </structure>
+    <structure name="output"/>
+    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.openidProvider.types.output" duplicate="id" name="openid"/>
+</structure>

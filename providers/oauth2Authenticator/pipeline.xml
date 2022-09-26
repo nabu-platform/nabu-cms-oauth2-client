@@ -5,4 +5,5 @@
     <structure definition="nabu.cms.oauth2.client.types.token" name="token"/>
     <structure definition="nabu.cms.oauth2.client.types.userInfo" minOccurs="0" name="userInfo"/>
     <field name="userId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
 </structure>

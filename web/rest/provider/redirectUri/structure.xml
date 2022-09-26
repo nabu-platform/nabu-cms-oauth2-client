@@ -1,0 +1,3 @@
+<structure name="redirectUri">
+    <field name="uri" type="java.net.URI"/>
+</structure>

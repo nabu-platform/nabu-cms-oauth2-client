@@ -2,6 +2,7 @@
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field comment="A human readable name for this provider" name="name" type="java.lang.String"/>
     <field comment="The application this provider is active on" name="webApplicationId" type="java.lang.String"/>
+    <field comment="By default we will take the host provided by the web application. But you can register a custom host for redirect uri generation." minOccurs="0" name="host" type="java.lang.String"/>
     <field comment="We assume you are capturing the response of the OAuth2 provider in your own application. This is the path to the correct file (defaults to &quot;/&quot;)" minOccurs="0" name="processPath" type="java.lang.String"/>
     <field comment="Once a user requests a login, how long is that particular request valid?" minOccurs="0" name="maximumLoginWait" type="be.nabu.libs.types.base.Duration"/>
     <field comment="You may need to use a custom http client to get this to work" minOccurs="0" name="httpClientId" type="java.lang.String"/>
@@ -18,4 +19,6 @@
     <field comment="The service that can be used to get the redirect uri" minOccurs="0" name="redirectUriServiceId" type="java.lang.String"/>
     <field comment="force,auto" minOccurs="0" name="approvalPrompt" type="java.lang.String"/>
     <field comment="online,offline" minOccurs="0" name="accessType" type="java.lang.String"/>
+    <field comment="When creating new accounts, the default alias type to (attempt to) use: email, phone, id (default is email)" minOccurs="0" name="aliasType" type="java.lang.String"/>
+    <field comment="If set to true, you can only log in with existing accounts. No new accounts will be created." minOccurs="0" name="mustExist" type="java.lang.Boolean"/>
 </structure>
