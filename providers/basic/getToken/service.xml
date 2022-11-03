@@ -131,7 +131,7 @@
 			lineNumber="9"
 			message="Token endpoint not configured" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
-			disabled="false"
+			disabled="true"
 			id="fa2fe8fa-c052-40b0-ba76-8d26319ec6e0"
 			lineNumber="10"
 			query="input/grantType">
@@ -427,7 +427,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Append grant_type"
-			disabled="false"
+			disabled="true"
 			id="84933956-bba6-495d-8ffb-9cf2de1ae09c"
 			lineNumber="20">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -442,7 +442,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Encode clientId &amp; clientSecret"
-			disabled="false"
+			disabled="true"
 			id="f1fbc8c5-16d4-464a-8062-55d3f479b205"
 			lineNumber="21">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -526,7 +526,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Append clientId &amp; clientSecret"
-			disabled="false"
+			disabled="true"
 			id="b50b9dca-0e96-427a-a5ff-1e47f7f27a98"
 			lineNumber="22">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -541,7 +541,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="At this point we must only put the scopes for password &amp; client credentials flow. The other flows had the scopes in the step before this"
-			disabled="false"
+			disabled="true"
 			id="6d60bc50-37cc-43cd-b779-fb259995befc"
 			label="input/grantType == &quot;password&quot; || input/grantType == &quot;client_credentials&quot; &amp;&amp; provider/requestedScopes != null"
 			lineNumber="23">
@@ -557,7 +557,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
 			comment="For authorization code requests we must include the original redirect uri"
-			disabled="false"
+			disabled="true"
 			id="407977b3-a212-43b0-869e-426f39b93755"
 			label="input/grantType == &quot;authorization_code&quot;"
 			lineNumber="24">
@@ -623,7 +623,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			comment="Add resource if necessary"
-			disabled="false"
+			disabled="true"
 			id="88d9f864-2ab4-4ba9-8eb3-32fc869d0c1c"
 			lineNumber="27">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -659,7 +659,7 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			comment="Execute the call"
-			disabled="false"
+			disabled="true"
 			id="3f53cf6e-ca04-486f-8a5c-61a8c2d69582"
 			lineNumber="30">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
@@ -875,36 +875,6 @@
 					lineNumber="39">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
-						id="5a3d7a6f-f2e5-40d7-ace6-07bad6ddcc87"
-						serviceId="nabu.protocols.http.client.Services.execute"
-						resultName="result1abf53e2716449569c465099dd1dbe93"
-						temporaryMapping="true"
-						x="118"
-						y="106"
-						invocationOrder="0"
-						asynchronous="false"
-						recache="false">
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="30c631a4-6ae8-4542-a12a-1c2a81844c72"
-							mask="false"
-							optional="false"
-							fixedValue="false">
-						<from>provider/tokenEndpoint</from>
-						<to>url</to>
-					</steps>
-					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-							disabled="false"
-							id="6be94c4a-fda6-4aec-9c76-83557cdf6ab5"
-							mask="false"
-							optional="false"
-							fixedValue="true">
-						<from>POST</from>
-						<to>method</to>
-					</steps>
-				</steps>
-				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-						disabled="false"
 						id="ac58e5aa-5983-4dc3-9baa-655ca547d268"
 						serviceId="nabu.data.mime.Services.newContentPart"
 						resultName="resultc5652b76933546ef9e74d2d68366819a"
@@ -1099,13 +1069,13 @@
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			description="=&quot;Invalid response from token endpoint: &quot; + tokenResponse/code"
-			disabled="false"
+			disabled="true"
 			id="a1663486-6e56-4c5f-a253-5054171674b2"
 			label="tokenResponse/code &lt; 200 || tokenResponse/code &gt;= 300"
 			lineNumber="41"
 			message="Invalid response from token endpoint" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			disabled="false"
+			disabled="true"
 			id="b2a5c2c0-88a8-4ecb-a63f-6646769316ad"
 			lineNumber="42">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -1175,6 +1145,77 @@
 				optional="false"
 				fixedValue="false">
 			<from>resulte5fd9d2141fc4f3783e4553ec40fe05f/unmarshalled</from>
+			<to>output/token</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="22cc5ebb-a705-4ae5-9493-5091bfa1a737"
+			lineNumber="43">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d47898f1-c897-4001-8da4-c0eb38e7fc65"
+				serviceId="nabu.cms.oauth2.client.providers.basic.getAnyToken"
+				resultName="resultfd847914e1ad44278b05bcf9ae54a675"
+				temporaryMapping="true"
+				x="148"
+				y="51"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="85d9bfaa-f1b5-478f-a759-d4e7c08dce9c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/code</from>
+				<to>code</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3294327c-6cf6-410c-a35b-258ee1d41096"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/grantType</from>
+				<to>grantType</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="266bceed-5f9f-47e4-8006-bf62c7ac4942"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/resource</from>
+				<to>resource</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4139b358-b90d-48a7-a718-9c3d1b0d5b81"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/redirectUri</from>
+				<to>originalRedirectUri</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d6be8c47-21ac-405b-969b-3d89430340a0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/oauth2ProviderId</from>
+				<to>oauth2ProviderId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4998bcf6-e275-4897-9823-20fdff0674e5"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultfd847914e1ad44278b05bcf9ae54a675/token</from>
 			<to>output/token</to>
 		</steps>
 	</steps>

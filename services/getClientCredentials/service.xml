@@ -1,0 +1,58 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="b4dbd603-ec9f-4055-bff6-e7bbbedeaf46"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="9ca652a6-4e7e-4342-94c9-d8a59f6373d0"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="bf525c99-81f5-48ec-9f54-afa9edff7d4c"
+				serviceId="nabu.cms.oauth2.client.providers.basic.getAnyToken"
+				resultName="result76c3d2abf47744d98c4e88f990c0391f"
+				temporaryMapping="true"
+				x="30"
+				y="30"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="381aa01a-afd2-4069-ac50-fb5d441be482"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/oauth2ProviderId</from>
+				<to>oauth2ProviderId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ace69b07-f927-469c-84ac-1ef86113bb7b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/resource</from>
+				<to>resource</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="745a8353-d36a-4c88-9a28-1531b8f99304"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>client_credentials</from>
+				<to>grantType</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="efb80e16-e804-4843-bc89-0d39065e493c"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result76c3d2abf47744d98c4e88f990c0391f/token</from>
+			<to>output/token</to>
+		</steps>
+	</steps>
+</sequence>

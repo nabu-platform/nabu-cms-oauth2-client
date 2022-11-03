@@ -1,0 +1,141 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="40e79dbc-cd76-4a22-9223-5e1ff0d77cca"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="We only support id tokens at this point"
+			disabled="false"
+			id="430a196d-c500-4f0d-87ca-375014599f47"
+			label="input/token/id_token != null"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="5ba4d022-945c-42ca-94a5-48e25687b359"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4b92a539-8848-49e1-98ba-d13af8fb775b"
+					serviceId="nabu.cms.oauth2.client.services.parseJwt"
+					resultName="resulta60d435527c94a66b67ae9405d9fa398"
+					temporaryMapping="true"
+					x="115"
+					y="37"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="077b62dc-6e5f-4122-9280-51fdcf666681"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/oauth2ProviderId</from>
+					<to>oauth2ProviderId</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7e3f415c-68f3-4851-bf50-a3b1a9a08b3c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/token/id_token</from>
+					<to>jwt</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="511a63f3-d480-446f-914f-32e64bf8be3a"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>false</from>
+					<to>allowUnvalidated</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fc3c8502-c0f3-4b62-a834-0da26c3603e5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resulta60d435527c94a66b67ae9405d9fa398/jwt</from>
+				<to>jwt</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Map to a user info object. The claims can be present in the token."
+				disabled="false"
+				id="248cf85c-d209-437d-abb8-905731093c81"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="e7370852-a7a8-4dbf-88c2-45edf28a6bc4"
+					serviceId="nabu.utils.Properties.toObject"
+					resultName="resulta341bb0b6d464314816b1bb2ef34e13a"
+					temporaryMapping="true"
+					x="156"
+					y="52"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="8118c17d-8aa7-42ad-9d29-a4fa238872a4"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>jwt/values</from>
+					<to>properties</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ef4ccce5-e514-41cd-ba9c-ac49bc1dac20"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>nabu.cms.oauth2.client.types.userInfo</from>
+					<to>typeId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="60272203-c4ea-435e-a5dd-a06095376bd5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resulta341bb0b6d464314816b1bb2ef34e13a/object</from>
+				<to>output/tokenInfo</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="bc45ef25-57ca-4e2b-b379-108ccffce7f1"
+				label="output/tokenInfo/sub == null"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="bef0e72d-6f3c-428e-9af7-8aae800a2e66"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>jwt/sub</from>
+				<to>output/tokenInfo/sub</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If we didn't get an email,  we might have an array of &quot;emails&quot; (microsoft). This array is split out into indexed keys."
+				disabled="false"
+				id="4d556dba-8bd1-42ff-a836-b482e75e600f"
+				label="output/tokenInfo/email == null"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="952504b2-0d51-40ea-82f6-4f6e77d23561"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>jwt/values[key == "emails[0]"]/value</from>
+				<to>output/tokenInfo/email</to>
+			</steps>
+		</steps>
+	</steps>
+</sequence>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2022-04-22T17:28:34.233+02:00" lastModified="2022-09-26T10:18:27.785+02:00" leaf="true" version="8">
+<node artifactManager="be.nabu.eai.module.types.structure.StructureManager" created="2022-04-22T17:28:34.233+02:00" lastModified="2022-11-01T14:42:59.800+01:00" leaf="true" version="9">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-04-24T08:21:18.243+02:00" lastModified="2022-09-21T17:14:07.994+02:00" leaf="true" version="4">
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-04-24T08:21:18.243+02:00" lastModified="2022-09-26T11:03:52.909+02:00" leaf="true" version="8">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties/>
     <references>nabu.cms.oauth2.client.web.rest.provider.getRedirectUri</references>
+    <tags>OAuth2</tags>
 </node>

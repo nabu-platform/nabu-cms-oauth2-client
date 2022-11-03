@@ -6,6 +6,14 @@
     <coreType>nabu.cms.oauth2.client.database.types.oauth2Provider</coreType>
     <createRole>$user</createRole>
     <deleteRole>$user</deleteRole>
+    <filters>
+        <caseInsensitive>false</caseInsensitive>
+        <key>name</key>
+        <operator>=</operator>
+        <or>false</or>
+        <input>true</input>
+        <vary>false</vary>
+    </filters>
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>
     <updateRole>$user</updateRole>
@@ -13,4 +21,6 @@
     <useLanguage>false</useLanguage>
     <useListOutputForCreate>false</useListOutputForCreate>
     <useListOutputForUpdate>false</useListOutputForUpdate>
+    <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
 </crud>

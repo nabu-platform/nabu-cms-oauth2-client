@@ -1,0 +1,172 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="08b85da7-ea9d-4496-b304-5a82076d572d"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="f6a556b3-8037-40ea-947e-9b52dd9d4917"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="175410af-f5a6-4695-8b54-77913d85871c"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2Provider.services.get"
+				resultName="result224cc5cf0b5e499da115ce9ee2415434"
+				temporaryMapping="true"
+				x="150"
+				y="56"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3547bdd5-06fb-4dd3-a87b-225e1ded0909"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/oauth2ProviderId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="057bd61b-7b73-4626-bfba-ac1b5d04bd41"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result224cc5cf0b5e499da115ce9ee2415434/result</from>
+			<to>provider</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="05fcfc18-de9d-4207-828d-41659e157056"
+			lineNumber="3"
+			query="provider/tokenInfoServiceId">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+				comment="The default only works on openid providers, check that it is openid"
+				disabled="false"
+				id="38e688c3-580c-4689-a625-c3219d4c3256"
+				label="null"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="2ea8806a-2ad9-4775-bbfb-1e0cd3e81aeb"
+					lineNumber="5">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+						disabled="false"
+						id="cbb49704-59b3-4cd9-b57e-15b50fb55306"
+						serviceId="nabu.cms.oauth2.client.crud.openidProvider.services.get"
+						resultName="resultbe122f6dfb19412dbe9897ea3f802b18"
+						temporaryMapping="true"
+						x="106"
+						y="145"
+						invocationOrder="0"
+						asynchronous="false"
+						recache="false">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="d1714001-db6b-4b5b-baa9-2937bf94f8ff"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>input/oauth2ProviderId</from>
+						<to>id</to>
+					</steps>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4884daae-80de-457e-ae8a-826e370a9a77"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>resultbe122f6dfb19412dbe9897ea3f802b18/result</from>
+					<to>openidProvider</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="We only trust information if we have a jwks endpoint to verify authenticity"
+					disabled="false"
+					id="4c0f23b0-00fd-49cc-8254-1f69169d277f"
+					label="openidProvider/jwksEndpoint != null"
+					lineNumber="6">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="6b06ce5b-6cda-41f4-be9d-263d57b2b4b7"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>nabu.cms.oauth2.client.providers.basic.getTokenInfo</from>
+					<to>implementationId</to>
+				</steps>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="0b87c341-b5e2-4984-b256-e75510c3ad3c"
+				lineNumber="7">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e9ff4ba5-b5cd-4e85-9dcf-b93fbd40873d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>provider/tokenInfoServiceId</from>
+				<to>implementationId</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="762e9503-853c-41d4-9aeb-4c85ed0be00f"
+			label="implementationId != null"
+			lineNumber="8">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="14ee35bc-0019-4f51-9260-b5dcde18aee7"
+				serviceId="nabu.cms.oauth2.client.specs.getTokenInfo"
+				resultName="result74884717048b478baa71dcddb31c6554"
+				temporaryMapping="true"
+				x="170"
+				y="73"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1a3b609a-b48b-44b0-83c3-7dcd4265079f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/oauth2ProviderId</from>
+				<to>oauth2ProviderId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f8073b9f-34e4-4d30-8b65-f389ab55516c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>implementationId</from>
+				<to>implementationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fb17f5e2-49ee-40e7-87cf-73d493f199c4"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token</from>
+				<to>token</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e2b69f35-0801-4316-9a08-ed7e483c67b5"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result74884717048b478baa71dcddb31c6554/tokenInfo</from>
+			<to>output/tokenInfo</to>
+		</steps>
+	</steps>
+</sequence>

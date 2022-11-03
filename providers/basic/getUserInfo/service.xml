@@ -43,12 +43,14 @@
 			label="!provider"
 			lineNumber="3"
 			message="Not a valid openid provider" xsi:nil="true"/>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			comment="No user info endpoint configured"
 			disabled="false"
-			id="90e6e130-f9dd-4ea2-9b84-9f360ae4fc4c"
+			id="ec48f9bc-cb22-456d-9318-6cf692573a08"
 			label="provider/userInfoEndpoint == null"
-			lineNumber="4"
-			message="No user info endpoint configured" xsi:nil="true"/>
+			lineNumber="4">
+		<count>1</count>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="fd94e84e-55c2-4f46-830f-5fa5c8bbfd19"

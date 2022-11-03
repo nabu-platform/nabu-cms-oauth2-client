@@ -81,15 +81,6 @@
 			lineNumber="3">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="d90c5c6c-7be6-40b8-bded-4d91fcd0d3e9"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>last/token</from>
-			<to>output/token/access_token</to>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
 				id="cff19c7c-892d-49c8-afaf-0861e99d3d9b"
 				mask="false"
 				optional="false"
@@ -117,12 +108,99 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="dd51be55-5e19-4d3d-9a29-88a0d03786bb"
+				id="b77e0213-f6f3-4e7d-b51e-eba73c370196"
 				mask="false"
 				optional="false"
 				fixedValue="false">
-			<from>last/token</from>
+			<from>last/accessToken</from>
+			<to>output/token/access_token</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c5638aef-8a13-4a9a-9092-639a14bbac96"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>last/idToken</from>
 			<to>output/token/id_token</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="04bf6b5e-bcbd-4c87-afdb-addf00486b3f"
+				serviceId="nabu.utils.Date.toTimestamp"
+				resultName="result327eec70cf4f4a03a3143f1e2316382c"
+				temporaryMapping="true"
+				x="256"
+				y="333"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="9d9119c4-5d96-45d9-9141-a2a974cf24fe"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>last/notBefore</from>
+				<to>date</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cf67a227-48de-40e7-8ced-b6f2631fa1db"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>asSeconds</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="26b8b2cd-3870-486e-9178-856ca247002b"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result327eec70cf4f4a03a3143f1e2316382c/timestamp</from>
+			<to>output/token/not_before</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="b465bd60-e2d8-4960-b201-fccc10532425"
+				serviceId="nabu.utils.Date.toTimestamp"
+				resultName="result44119f9baacf4057a7edf3a49fd9c3ee"
+				temporaryMapping="true"
+				x="242"
+				y="23"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7e77898f-a291-4ea7-b099-4ea4a9d7d134"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>last/expires</from>
+				<to>date</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7a6ef7ab-2c82-4d29-825f-feb12d23d470"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>true</from>
+				<to>asSeconds</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="fd2fbbd0-a615-4a89-ab21-092901274787"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result44119f9baacf4057a7edf3a49fd9c3ee/timestamp</from>
+			<to>output/token/expires_on</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"

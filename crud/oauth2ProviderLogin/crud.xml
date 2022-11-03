@@ -24,7 +24,7 @@
     </filters>
     <filters>
         <caseInsensitive>false</caseInsensitive>
-        <key>token</key>
+        <key>accessToken</key>
         <operator>is not null</operator>
         <or>false</or>
         <alias>hasToken</alias>
@@ -38,4 +38,6 @@
     <useLanguage>false</useLanguage>
     <useListOutputForCreate>false</useListOutputForCreate>
     <useListOutputForUpdate>false</useListOutputForUpdate>
+    <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
 </crud>

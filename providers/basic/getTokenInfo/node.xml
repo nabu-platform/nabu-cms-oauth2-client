@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-09-27T09:05:19.651+02:00" lastModified="2022-09-27T10:41:52.567+02:00" leaf="true" version="11">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.cms.oauth2.client.specs.getTokenInfo</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
+    <references>nabu.cms.oauth2.client.types.userInfo</references>
+    <references>be.nabu.libs.http.jwt.JWTBody</references>
+    <references>java.util.UUID</references>
+    <references>nabu.utils.Properties.toObject</references>
+    <references>nabu.cms.oauth2.client.services.parseJwt</references>
+</node>

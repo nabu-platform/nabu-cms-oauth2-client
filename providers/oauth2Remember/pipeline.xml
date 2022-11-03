@@ -1,0 +1,8 @@
+<structure interface="nabu.cms.core.v2.specs.rememberHandler" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" name="login"/>
+    <field minOccurs="0" name="atLeastUntil" type="java.util.Date"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.database.types.oauth2ProviderLogin" minOccurs="0" name="refreshed"/>
+</structure>

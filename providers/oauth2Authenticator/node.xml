@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:10:53.308+02:00" lastModified="2022-09-21T15:13:56.531+02:00" leaf="true" version="20">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:10:53.308+02:00" lastModified="2022-09-27T11:36:22.397+02:00" leaf="true" version="26">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <properties>
         <property key="authenticationType">oauth2</property>
     </properties>
+    <references>nabu.utils.Object.mapByKey</references>
     <references>nabu.cms.oauth2.client.providers.basic.getUser</references>
     <references>java.util.Date</references>
     <references>nabu.utils.Date.now</references>
@@ -17,10 +18,13 @@
     <references>be.nabu.libs.authentication.api.Token</references>
     <references>be.nabu.libs.authentication.api.principals.TypedPrincipal</references>
     <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output</references>
+    <references>nabu.utils.reflection.Type.newInstance</references>
+    <references>nabu.cms.oauth2.client.providers.getTokenInfo</references>
     <references>nabu.cms.oauth2.client.types.token</references>
     <references>nabu.cms.oauth2.client.types.userInfo</references>
     <references>java.lang.String</references>
     <references>nabu.utils.Date.increment</references>
     <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.get</references>
+    <references>nabu.utils.Date.fromTimestamp</references>
     <references>nabu.cms.oauth2.client.providers.getUserInfo</references>
 </node>

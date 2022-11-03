@@ -7,4 +7,5 @@
     <field comment="Can contain the openid token" minOccurs="0" name="id_token" type="java.lang.String"/>
     <field comment="Expressed in seconds from EPOCH" minOccurs="0" name="expires_on" type="java.lang.Long"/>
     <field comment="Expressed in seconds from EPOCH" minOccurs="0" name="not_before" type="java.lang.Long"/>
+    <field minOccurs="0" name="resource" type="java.lang.String"/>
 </structure>

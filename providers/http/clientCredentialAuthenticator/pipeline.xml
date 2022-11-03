@@ -1,0 +1,10 @@
+<structure interface="be.nabu.libs.http.api.HTTPRequestAuthenticator.authenticate" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" minOccurs="0" name="provider"/>
+    <field name="total" nillable="false" type="java.lang.Integer"/>
+    <structure definition="nabu.cms.oauth2.client.types.token" name="token"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" minOccurs="0" name="latest"/>
+    <field minOccurs="0" name="now" type="java.util.Date"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.createInput" name="login" restrict="id"/>
+</structure>

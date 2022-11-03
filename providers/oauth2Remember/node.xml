@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-11-01T14:36:03.172+01:00" lastModified="2022-11-01T14:51:30.931+01:00" leaf="true" version="15">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties>
+        <property key="authenticationType">oauth2</property>
+    </properties>
+    <references>nabu.cms.core.v2.specs.rememberHandler</references>
+    <references>nabu.cms.oauth2.client.database.types.oauth2ProviderLogin</references>
+    <references>java.util.Date</references>
+    <references>nabu.cms.oauth2.client.services.refresh</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.get</references>
+    <references>be.nabu.libs.authentication.api.Token</references>
+    <references>nabu.utils.Date.incrementDuration</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output</references>
+</node>

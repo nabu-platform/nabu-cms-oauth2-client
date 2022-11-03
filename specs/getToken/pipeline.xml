@@ -1,8 +1,8 @@
 <structure comment="For granttype password, the username &amp; password should be &quot;:&quot; separated into the code field.&#10;" name="pipeline">
     <structure name="input">
         <field comment="The state is the id" name="oauth2ProviderLoginId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-        <field name="code" type="java.lang.String"/>
         <field name="grantType" type="nabu.cms.oauth2.client.types.simple.grantType"/>
+        <field comment="Necessary for granttype authorization_code, password, refresh_token" minOccurs="0" name="code" type="java.lang.String"/>
         <field comment="Ask it for a specific resource" minOccurs="0" name="resource" type="java.lang.String"/>
     </structure>
     <structure name="output">

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-07T13:34:59.950+02:00" lastModified="2022-10-07T14:14:27.874+02:00" leaf="true" version="35">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.utils.types.UriComponents</references>
+    <references>nabu.data.mime.Services.newContentPart</references>
+    <references>nabu.data.mime.Services.getContent</references>
+    <references>nabu.utils.Uri.fromComponents</references>
+    <references>nabu.cms.oauth2.client.types.simple.grantType</references>
+    <references>nabu.utils.List.getAll</references>
+    <references>nabu.utils.Uri.encodeUri</references>
+    <references>nabu.utils.String.join</references>
+    <references>be.nabu.libs.http.api.HTTPResponse</references>
+    <references>java.lang.Long</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
+    <references>nabu.utils.String.toBytes</references>
+    <references>java.lang.String</references>
+    <references>java.net.URI</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.data.json.Services.unmarshal</references>
+    <references>be.nabu.utils.mime.api.Part</references>
+    <references>nabu.utils.Uri.toComponents</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.data.mime.Services.newByteContentPart</references>
+    <references>nabu.utils.Uri.encodeUriComponent</references>
+    <references>java.util.UUID</references>
+    <references>nabu.protocols.http.client.Services.execute</references>
+    <references>nabu.data.mime.Services.newEmptyPart</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
+    <references>nabu.data.mime.Services.newHeader</references>
+</node>

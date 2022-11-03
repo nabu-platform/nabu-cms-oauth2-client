@@ -1,0 +1,5 @@
+<structure interface="nabu.cms.oauth2.client.specs.getTokenInfo" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="be.nabu.libs.http.jwt.JWTBody" minOccurs="0" name="jwt"/>
+</structure>

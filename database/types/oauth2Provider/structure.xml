@@ -17,8 +17,10 @@
     <field comment="The service that can be used to resolve the user info" minOccurs="0" name="userInfoServiceId" type="java.lang.String"/>
     <field comment="The service that can be used to get the token" minOccurs="0" name="tokenServiceId" type="java.lang.String"/>
     <field comment="The service that can be used to get the redirect uri" minOccurs="0" name="redirectUriServiceId" type="java.lang.String"/>
+    <field comment="A custom service to resolve token information" minOccurs="0" name="tokenInfoServiceId" type="java.lang.String"/>
     <field comment="force,auto" minOccurs="0" name="approvalPrompt" type="java.lang.String"/>
     <field comment="online,offline" minOccurs="0" name="accessType" type="java.lang.String"/>
     <field comment="When creating new accounts, the default alias type to (attempt to) use: email, phone, id (default is email)" minOccurs="0" name="aliasType" type="java.lang.String"/>
-    <field comment="If set to true, you can only log in with existing accounts. No new accounts will be created." minOccurs="0" name="mustExist" type="java.lang.Boolean"/>
+    <field comment="When used as web application login, do you want to force the token lifecycle on the remember etc?" minOccurs="0" name="forceLifecycle" type="java.lang.Boolean"/>
+    <field comment="When no verification status is given, do we verify the accounts by default?" minOccurs="0" name="defaultVerified" type="java.lang.Boolean"/>
 </structure>

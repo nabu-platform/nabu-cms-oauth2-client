@@ -1,0 +1,23 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="oauth2ProviderId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field name="grantType" type="nabu.cms.oauth2.client.types.simple.grantType"/>
+        <field comment="Necessary for refresh token, authorization code and password. For password concatenate username and password with :" minOccurs="0" name="code" type="java.lang.String"/>
+        <field comment="Necessary for grant type &quot;authorization_code&quot;" minOccurs="0" name="originalRedirectUri" type="java.net.URI"/>
+        <field minOccurs="0" name="resource" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.cms.oauth2.client.types.token" name="token"/>
+    </structure>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <field name="requestContent" type="java.lang.String"/>
+    <field minOccurs="0" name="encodedCode" type="java.lang.String"/>
+    <field minOccurs="0" name="password" type="java.lang.String"/>
+    <field name="username" type="java.lang.String"/>
+    <field minOccurs="0" name="redirectUri" type="java.lang.String"/>
+    <field minOccurs="0" name="tokenUriAssembled" type="java.net.URI"/>
+    <structure definition="nabu.utils.types.UriComponents" minOccurs="0" name="tokenUri"/>
+    <structure definition="be.nabu.libs.http.api.HTTPResponse" minOccurs="0" name="tokenResponse"/>
+    <structure definition="be.nabu.utils.mime.api.Part" minOccurs="0" name="request"/>
+    <field name="size" type="java.lang.Long"/>
+</structure>
