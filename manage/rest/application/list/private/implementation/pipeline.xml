@@ -1,0 +1,4 @@
+<structure interface="nabu.cms.oauth2.client.manage.rest.application.list:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+</structure>

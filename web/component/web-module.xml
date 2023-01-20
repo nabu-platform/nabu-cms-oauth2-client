@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <webModule>
-    <path>/api/v1/oauth2</path>
+    <path>/oauth2</path>
     <webFragments>nabu.cms.oauth2.client.web.rest.provider.getRedirectUri</webFragments>
-    <audience>CUSTOMER</audience>
 </webModule>

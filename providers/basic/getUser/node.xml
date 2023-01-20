@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:36:35.384+02:00" lastModified="2022-10-22T17:34:24.132+02:00" leaf="true" version="114">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:36:35.384+02:00" lastModified="2022-11-25T16:02:28.909+01:00" leaf="true" version="119">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
+    <references>nabu.cms.core.services.context.getApplication</references>
     <references>nabu.cms.core.types.emodel.core.Account</references>
     <references>nabu.cms.core.crud.nodeExternalId.services.create</references>
     <references>nabu.cms.core.crud.account.services.update</references>

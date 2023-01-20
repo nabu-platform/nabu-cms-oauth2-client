@@ -1,7 +1,7 @@
 <structure collectionName="oauth2Providers" name="oauth2Provider">
     <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field comment="A human readable name for this provider" name="name" type="java.lang.String"/>
-    <field comment="The application this provider is active on" name="webApplicationId" type="java.lang.String"/>
+    <field comment="The application this provider is active on (if any). Some providers are used for client credential flows only and don't need user roundtripping." minOccurs="0" name="webApplicationId" type="java.lang.String"/>
     <field comment="By default we will take the host provided by the web application. But you can register a custom host for redirect uri generation." minOccurs="0" name="host" type="java.lang.String"/>
     <field comment="We assume you are capturing the response of the OAuth2 provider in your own application. This is the path to the correct file (defaults to &quot;/&quot;)" minOccurs="0" name="processPath" type="java.lang.String"/>
     <field comment="Once a user requests a login, how long is that particular request valid?" minOccurs="0" name="maximumLoginWait" type="be.nabu.libs.types.base.Duration"/>
@@ -23,4 +23,5 @@
     <field comment="When creating new accounts, the default alias type to (attempt to) use: email, phone, id (default is email)" minOccurs="0" name="aliasType" type="java.lang.String"/>
     <field comment="When used as web application login, do you want to force the token lifecycle on the remember etc?" minOccurs="0" name="forceLifecycle" type="java.lang.Boolean"/>
     <field comment="When no verification status is given, do we verify the accounts by default?" minOccurs="0" name="defaultVerified" type="java.lang.Boolean"/>
+    <field comment="For some providers (e.g. microsoft), when used in federation you can give a domain hint in the redirect uri" minOccurs="0" name="domainHint" type="java.lang.String"/>
 </structure>

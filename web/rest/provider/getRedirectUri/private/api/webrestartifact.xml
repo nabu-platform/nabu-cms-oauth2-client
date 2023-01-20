@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>GET</method>
-    <path>/provider/{providerName}/uri</path>
+    <path>/redirect/{providerName}</path>
     <permissionAction>user.authenticate</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>true</useWebApplicationAsPermissionContext>

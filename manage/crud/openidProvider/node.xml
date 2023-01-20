@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.crud.CRUDArtifactManager" created="2022-09-20T14:57:38.802+02:00" lastModified="2022-09-21T11:47:05.739+02:00" leaf="false" version="5">
+<node artifactManager="be.nabu.eai.module.services.crud.CRUDArtifactManager" created="2022-09-20T14:57:38.802+02:00" lastModified="2022-11-25T13:58:25.340+01:00" leaf="false" version="8">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.database.types.openidProvider</references>
     <references>nabu.services.crud.provider.basic.provider</references>

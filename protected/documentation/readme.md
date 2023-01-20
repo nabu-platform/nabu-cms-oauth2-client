@@ -1,18 +1,17 @@
-TODO: need default visualization
+# Refresh tokens
 
-- enrich user: we set a property on the web application node where the key is the spec name, the value is the service implementation
+There is no standardized way in oauth2 to ask for a refresh token, but there is one in openid: https://openid.net/specs/openid-connect-core-1_0.html#OfflineAccess
+You should request a scope "offline_access" _and_ include a prompt=consent query parameter in most cases.
 
-- auto deployment actions: if there are deployment actions in non-project folders, we can add them to our project? (basically copy? or store the results locally in the folder? or...?)
-	- need auto deployment of web application nodes and the configuration!
-	- need auto deployment of oauth2 providers (only apply client id of not available in target environment)
+Not all providers support this however or have their own ways of doing this.
 
-- add "active" boolean to provider in case you want to disable for some reason! (can also disable in a target environment after deployment, it is not overwritten)
+## Google
 
-- page builder: need a tab (in the overall settings) to manage oauth2
-	- add one of the existing providers
-	- add a new openid provider (with discovery uri)
-	- add a new oauth2 provider
-	- show the redirect uri so it can be registered
-- for each provider (by name) have a default visualization button
-	- add this to the web component, register it globally so it can be injected as needed
-	- need to add default logos etc as per the branding requirements of the provider
+With google (before 2021) you had to include "approval_prompt=force" and "access_type=offline" as query parameters.
+After 2021 they changed the prompt to the more standardized version and you need to add "prompt=consent" but still add "access_type=offline". The scope offline_access is not supported at the time of writing.
+
+You can currently do this by manually updating the authorization URL to:
+
+```
+https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent
+```

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2022-04-21T13:15:29.164+02:00" lastModified="2022-11-01T14:05:51.810+01:00" leaf="true" version="74">
+<node artifactManager="be.nabu.eai.module.data.model.DataModelManager" created="2022-04-21T13:15:29.164+02:00" lastModified="2023-01-20T10:18:15.895+01:00" leaf="true" version="76">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.database.types.oauth2Provider</references>
     <references>nabu.cms.oauth2.client.database.types.oauth2ProviderLogin</references>

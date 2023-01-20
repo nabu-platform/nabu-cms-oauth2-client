@@ -6,11 +6,13 @@
         <field name="redirectUri" type="java.net.URI"/>
     </structure>
     <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
-    <structure definition="nabu.web.application.types.WebApplicationInformation" minOccurs="0" name="information"/>
     <field minOccurs="0" name="path" type="java.lang.String"/>
     <field minOccurs="0" name="localRedirectUri" type="java.net.URI"/>
     <field name="requestContent" type="java.lang.String"/>
     <field minOccurs="0" name="encodedLocalRedirectUri" type="java.lang.String"/>
     <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.database.types.oauth2ProviderLogin" name="login"/>
     <structure definition="nabu.utils.types.UriComponents" minOccurs="0" name="authorizationComponents"/>
+    <field comment="By default we will take the host provided by the web application. But you can register a custom host for redirect uri generation." minOccurs="0" name="host" type="java.lang.String"/>
+    <field minOccurs="0" name="scheme" type="java.lang.String"/>
+    <field minOccurs="0" name="port" type="java.lang.Long"/>
 </structure>

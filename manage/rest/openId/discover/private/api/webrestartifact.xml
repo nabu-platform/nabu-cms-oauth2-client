@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>PATCH</method>
-    <path>/openid/{openIdProviderId}/discover</path>
+    <path>/openIdProvider/{openIdProviderId}/discover</path>
     <role>$user</role>
-    <permissionAction>openidProvider.update</permissionAction>
+    <permissionAction>oauth2.manage</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>true</useWebApplicationAsPermissionContext>
+    <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
     <input>nabu.cms.oauth2.client.manage.rest.openId.discoverInput</input>
     <lenient>true</lenient>
     <webApplicationId>false</webApplicationId>

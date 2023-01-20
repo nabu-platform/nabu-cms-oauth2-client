@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-20T15:50:31.452+02:00" lastModified="2022-09-21T11:39:32.378+02:00" leaf="true" version="4">
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-09-20T15:50:31.452+02:00" lastModified="2022-11-25T13:07:49.600+01:00" leaf="true" version="7">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.manage.crud.oauth2Provider</references>
     <references>nabu.cms.oauth2.client.manage.crud.oauth2ProviderLogin</references>
     <references>nabu.cms.oauth2.client.manage.crud.openidProvider</references>
     <references>nabu.cms.oauth2.client.manage.rest.openId.discover</references>
+    <references>nabu.cms.oauth2.client.manage.rest.oauth2.getRedirectUri</references>
+    <references>nabu.cms.oauth2.client.manage.rest.application.list</references>
     <tags>OpenID</tags>
 </node>

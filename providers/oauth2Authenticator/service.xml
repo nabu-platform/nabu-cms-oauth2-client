@@ -352,6 +352,15 @@
 				<from>userInfo</from>
 				<to>userInfo</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="99df370d-fd9e-413b-8d19-cef76a5ba980"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/realm</from>
+				<to>realm</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

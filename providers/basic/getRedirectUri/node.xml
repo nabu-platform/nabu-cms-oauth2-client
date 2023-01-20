@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2022-09-08T13:40:55.586+02:00" leaf="true" version="47">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2023-01-20T10:19:15.638+01:00" leaf="true" version="55">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.utils.types.UriComponents</references>
     <references>nabu.utils.Server.uuid</references>
@@ -16,10 +17,11 @@
     <references>nabu.cms.oauth2.client.database.types.oauth2ProviderLogin</references>
     <references>nabu.web.application.Services.information</references>
     <references>nabu.utils.String.replace</references>
+    <references>java.lang.Long</references>
     <references>java.net.URI</references>
     <references>java.lang.String</references>
     <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
     <references>nabu.cms.oauth2.client.specs.getRedirectUri</references>
-    <references>nabu.web.application.types.WebApplicationInformation</references>
+    <references>nabu.utils.String.split</references>
     <references>nabu.utils.Date.incrementDuration</references>
 </node>

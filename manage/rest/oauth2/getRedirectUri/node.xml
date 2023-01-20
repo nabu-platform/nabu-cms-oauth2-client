@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-09-21T17:13:57.572+02:00" lastModified="2022-11-08T16:27:50.972+01:00" leaf="true" version="15">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <properties/>
+    <references>nabu.cms.oauth2.client.manage.crud.oauth2Provider.types.output</references>
+    <references>nabu.cms.oauth2.client.web.rest.provider.redirectUri</references>
+    <references>nabu.cms.oauth2.client.providers.getRedirectUri</references>
+    <references>nabu.cms.oauth2.client.manage.crud.oauth2Provider.services.list</references>
+    <references>java.lang.String</references>
+</node>
