@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-02-15T16:51:31.337+01:00" lastModified="2023-02-15T16:51:36.154+01:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties>
+        <property key="authenticationType">oauth2</property>
+    </properties>
+    <references>nabu.cms.core.v2.specs.loginIdentifier</references>
+    <references>java.util.UUID</references>
+    <references>nabu.cms.core.v2.security.system.authenticationInput</references>
+</node>

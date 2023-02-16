@@ -5,8 +5,9 @@
     <role>$user</role>
     <permissionAction>oauth2.manage</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
-    <useWebApplicationAsPermissionContext>true</useWebApplicationAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
+    <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <input>nabu.cms.oauth2.client.manage.rest.openId.discoverInput</input>
     <lenient>true</lenient>
     <webApplicationId>false</webApplicationId>
