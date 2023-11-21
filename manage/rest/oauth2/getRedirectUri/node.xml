@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-09-21T17:13:57.572+02:00" lastModified="2022-11-08T16:27:50.972+01:00" leaf="true" version="15">
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-09-21T17:13:57.572+02:00" lastModified="2023-05-05T11:35:52.364+02:00" leaf="true" version="17">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.manage.crud.oauth2Provider.types.output</references>
     <references>nabu.cms.oauth2.client.web.rest.provider.redirectUri</references>

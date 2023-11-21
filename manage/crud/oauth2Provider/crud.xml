@@ -51,6 +51,7 @@
         <vary>false</vary>
     </filters>
     <getPermission>oauth2.list</getPermission>
+    <hooks>false</hooks>
     <listPermission>oauth2.list</listPermission>
     <listRole>$user</listRole>
     <provider>nabu.services.crud.provider.basic.provider</provider>

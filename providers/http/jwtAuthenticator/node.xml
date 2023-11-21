@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-10-08T09:03:28.025+02:00" lastModified="2023-10-13T15:27:42.071+02:00" leaf="true" version="26">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-04-18T16:44:02.587+02:00" lastModified="2023-10-13T15:28:04.900+02:00" leaf="true" version="6">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties>
-        <property key="authenticationType">oauth2:clientCredentials</property>
+        <property key="authenticationType">oauth2:jwt</property>
     </properties>
     <references>be.nabu.libs.http.api.HTTPRequestAuthenticator.authenticate</references>
     <references>java.util.Date</references>
@@ -16,9 +16,9 @@
     <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output</references>
     <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.createInput</references>
     <references>be.nabu.libs.http.api.HTTPResponse</references>
+    <references>nabu.cms.oauth2.client.services.getJwtToken</references>
     <references>nabu.data.mime.Services.setHeader</references>
     <references>be.nabu.libs.http.api.HTTPRequest</references>
-    <references>nabu.cms.oauth2.client.services.getClientCredentials</references>
     <references>java.lang.Boolean</references>
     <references>nabu.cms.oauth2.client.types.token</references>
     <references>java.lang.String</references>

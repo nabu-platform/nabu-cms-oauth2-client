@@ -1,0 +1,1 @@
+No security on this because we want canLoginAs and/or canRegisterAs logic to be executed which can not be done at this stage because we don't know who you want to login as 

@@ -15,3 +15,7 @@ You can currently do this by manually updating the authorization URL to:
 ```
 https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent
 ```
+
+## JWT
+
+JWT RFC: https://datatracker.ietf.org/doc/html/rfc7523#section-2.1

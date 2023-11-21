@@ -42,7 +42,8 @@
 			id="f37657e4-fa3e-4f83-8cb7-3ae6cc5c5a7f"
 			label="!login"
 			lineNumber="3"
-			message="Could not find login" xsi:nil="true"/>
+			message="Could not find login"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="If the token is about to expire (or already expired), request new"
 			disabled="false"
@@ -234,6 +235,24 @@
 					fixedValue="false">
 				<from>refreshedToken/id_token</from>
 				<to>newLogin/idToken</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="1b3e528690bd4435a94f05f58e798f08"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>refresh_token</from>
+				<to>newLogin/flow</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b782a5df3cdb40bc839b2a7c97c94efd"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/requestedScopes</from>
+				<to>newLogin/requestedScopes</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"

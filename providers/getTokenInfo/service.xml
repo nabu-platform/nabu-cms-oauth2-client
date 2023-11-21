@@ -168,5 +168,14 @@
 			<from>result74884717048b478baa71dcddb31c6554/tokenInfo</from>
 			<to>output/tokenInfo</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="74668cafcb5240bd9fa2a4f338902117"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result74884717048b478baa71dcddb31c6554/claims</from>
+			<to>output/claims</to>
+		</steps>
 	</steps>
 </sequence>

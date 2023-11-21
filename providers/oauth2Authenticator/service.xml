@@ -234,6 +234,15 @@
 				<to>includeNull</to>
 			</steps>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="9516a8f469ec492395a790c09c30387e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result22c7467c299e4078b2445937d9e81b07/claims</from>
+			<to>claims</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Then get user info and merge it on top of the token info (so user info wins if relevant)"
@@ -308,6 +317,45 @@
 				<from>false</from>
 				<to>includeNull</to>
 			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="251ffdf4a015417cacf3b28aa159ee8d"
+				serviceId="nabu.utils.List.addAll"
+				resultName="result09e6f415b78d453e9ea3f32b9a66b8b7"
+				temporaryMapping="true"
+				x="352"
+				y="354"
+				invocationOrder="1"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="fc729cf09e704ee2ab93f106663b5c62"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>claims</from>
+				<to>list</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f1adae0a163a467bb1ee2f4dc21ef4d7"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resulta6b1a2cd201a4af1bedabf078a39b5c2/claims</from>
+				<to>objects</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6f1c63a3a53a40868e59617ff1a4ea39"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result09e6f415b78d453e9ea3f32b9a66b8b7/list</from>
+			<to>claims</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -687,6 +735,113 @@
 					fixedValue="false">
 				<from>login/id</from>
 				<to>id</to>
+			</steps>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="3f3eec1790ae44a2acecd9ba2389b73a"
+			lineNumber="17">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="fee5c0624658464da0fc05960e7a123f"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2Provider.services.get"
+				resultName="result2fad0408993646be8d2e9ff383ef76ae"
+				temporaryMapping="true"
+				x="53"
+				y="81"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d991a1499a9a40c4a0073eabdb8c3759"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/oauth2ProviderId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="e0fec62b45d14be98c7ab9a11f96b7cf"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result2fad0408993646be8d2e9ff383ef76ae/result</from>
+			<to>provider</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="90ea99a9c9c546f9a8acc3956c6889d0"
+			label="provider/handleAuthenticationServiceId != null"
+			lineNumber="18">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d76b69c5ed824de5bfa837ade3b923dd"
+				serviceId="nabu.cms.oauth2.client.specs.handleAuthentication"
+				resultName="resultab5e81d3836c47eda82a70ffbc27dbb3"
+				temporaryMapping="true"
+				x="262"
+				y="86"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d5959d16099d4d1b952ccb6291cce1d9"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>provider/handleAuthenticationServiceId</from>
+				<to>implementationId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d4496a7199554942adfb360519166f05"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>userInfo</from>
+				<to>userInfo</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="56f228af7d9944ea8a4e78cfb8ef066a"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>claims</from>
+				<to>claims</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d9e42eb83b82405bb2277a71817930ef"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>userId</from>
+				<to>userId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ceeb66eeba4e4ca29da31638cd76d6e3"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/id</from>
+				<to>oauth2ProviderLoginId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cd5f089417bc438e917b3ce87ef9dfb5"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/oauth2ProviderId</from>
+				<to>oauth2ProviderId</to>
 			</steps>
 		</steps>
 	</steps>

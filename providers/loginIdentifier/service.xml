@@ -2,4 +2,39 @@
 		disabled="false"
 		id="65f537d3ce62419e8843838aac79cda3"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="4f37255394e74102a803d6f5a250d154"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="633bc71bee484fecb78292e1f084345d"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.get"
+				resultName="resulta8e2cb3810d54feebad6c59e915de9f4"
+				temporaryMapping="true"
+				x="49"
+				y="39"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="93e345a50a764dbc917bea0539bfd07b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/login/authenticationId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="780f827cf3704e22918153b6f0646454"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resulta8e2cb3810d54feebad6c59e915de9f4/result/userId</from>
+			<to>output/userId</to>
+		</steps>
+	</steps>
 </sequence>

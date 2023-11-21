@@ -167,5 +167,14 @@
 			<from>result234bfc90bb0a46c89325528b6cd806e3/userInfo</from>
 			<to>output/userInfo</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="3827e52ec62e4bb9b41716d8fac10a2f"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result234bfc90bb0a46c89325528b6cd806e3/claims</from>
+			<to>output/claims</to>
+		</steps>
 	</steps>
 </sequence>

@@ -1,10 +1,10 @@
-<structure comment="Retrieve user info from the standardized openid user info endpoint" name="pipeline">
+<structure name="pipeline">
     <structure name="input">
         <field name="oauth2ProviderId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-        <structure definition="nabu.cms.oauth2.client.types.token" name="token"/>
-    </structure>
-    <structure name="output">
+        <field name="oauth2ProviderLoginId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+        <field name="userId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
         <structure definition="nabu.cms.oauth2.client.types.userInfo" minOccurs="0" name="userInfo"/>
         <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="claims"/>
     </structure>
+    <structure name="output"/>
 </structure>

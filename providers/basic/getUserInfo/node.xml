@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T19:11:27.205+02:00" lastModified="2022-09-27T08:53:12.817+02:00" leaf="true" version="23">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T19:11:27.205+02:00" lastModified="2023-03-15T17:18:09.528+01:00" leaf="true" version="26">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.specs.getUserInfo</references>
     <references>nabu.cms.oauth2.client.crud.openidProvider.services.get</references>
+    <references>be.nabu.libs.types.api.KeyValuePair</references>
     <references>nabu.data.mime.Services.getContent</references>
     <references>java.util.UUID</references>
+    <references>nabu.cms.oauth2.client.types.claimList</references>
     <references>nabu.cms.oauth2.client.crud.openidProvider.types.output</references>
     <references>nabu.data.xml.Services.unmarshal</references>
     <references>nabu.protocols.http.client.Services.execute</references>
@@ -17,4 +20,5 @@
     <references>nabu.data.mime.Services.newEmptyPart</references>
     <references>nabu.data.json.Services.unmarshal</references>
     <references>nabu.web.application.jwt.Services.unmarshal</references>
+    <references>nabu.utils.Stream.toString</references>
 </node>

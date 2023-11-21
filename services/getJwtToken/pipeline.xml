@@ -1,0 +1,14 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="oauth2ProviderId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.cms.oauth2.client.types.token" minOccurs="0" name="token"/>
+    </structure>
+    <field name="jwt" type="java.lang.String"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.database.types.oauth2ProviderLogin" name="login"/>
+    <field name="request" type="java.lang.String"/>
+    <structure definition="be.nabu.libs.http.api.HTTPResponse" minOccurs="0" name="response"/>
+    <structure definition="be.nabu.libs.types.api.KeyValuePair" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+</structure>

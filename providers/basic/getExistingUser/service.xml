@@ -214,15 +214,6 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="eaa7babf-972c-4e2f-bb64-b0f208b32d23"
-				mask="false"
-				optional="false"
-				fixedValue="false">
-			<from>input/userInfo</from>
-			<to>userInfo</to>
-		</steps>
-		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-				disabled="false"
 				id="876a0d13-8ee1-44cf-a7a9-e9c2f4564f61"
 				mask="false"
 				optional="false"
@@ -241,7 +232,7 @@
 			comment="Try to find the account by email"
 			disabled="false"
 			id="017c65f4-c304-4bc5-b067-fc9f3c0d2e89"
-			label="output/userId == null &amp;&amp; userInfo/email != null"
+			label="output/userId == null &amp;&amp; input/userInfo/email != null"
 			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
@@ -256,21 +247,21 @@
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="e98a9bba-dc92-4f6b-a68c-73f7c0dbba01"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>userInfo/email</from>
-				<to>filter/alias</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="ebc1e75a-dbd5-4d29-b0af-2495fe4c1e20"
 					mask="false"
 					optional="false"
 					fixedValue="false">
 				<from>input/realm</from>
 				<to>filter/realm[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d91e88fb40f046f4ad2154158849d48b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/userInfo/email</from>
+				<to>filter/alias</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"

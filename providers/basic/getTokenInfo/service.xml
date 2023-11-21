@@ -105,6 +105,15 @@
 				<from>resulta341bb0b6d464314816b1bb2ef34e13a/object</from>
 				<to>output/tokenInfo</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="124f64f9c89945f098b64fdcad1aef0f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>jwt/values</from>
+				<to>output/claims</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"

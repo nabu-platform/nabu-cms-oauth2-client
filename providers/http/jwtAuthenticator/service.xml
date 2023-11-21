@@ -1,6 +1,6 @@
 <sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		disabled="false"
-		id="9a1b1012-7dcf-4f59-ad4d-c5e4ce685748"
+		id="f1d782f547594519b018b0efcbdd14e2"
 		lineNumber="1">
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
@@ -137,8 +137,8 @@
 				serviceId="nabu.utils.Date.incrementDuration"
 				resultName="result12314730e1d945fea3376ffd23680f58"
 				temporaryMapping="true"
-				x="368"
-				y="232"
+				x="290"
+				y="241"
 				invocationOrder="0"
 				asynchronous="false"
 				recache="false">
@@ -173,18 +173,18 @@
 				lineNumber="8">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
-					id="4a797666-c77c-4a39-b00d-11f2e22e8885"
-					serviceId="nabu.cms.oauth2.client.services.getClientCredentials"
-					resultName="resultddad8b7ae9ab437a9270011671a2b892"
+					id="747cb243ee8b4bbebcfb90ba045385ea"
+					serviceId="nabu.cms.oauth2.client.services.getJwtToken"
+					resultName="resulta7457113e0fa4f0086eb25f568552961"
 					temporaryMapping="true"
-					x="67"
-					y="87"
+					x="195"
+					y="40"
 					invocationOrder="0"
 					asynchronous="false"
 					recache="false">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="d3442170-c9b5-4c45-8b39-5715a3f343a8"
+						id="b1a559c1c8d24c6397215241df398441"
 						mask="false"
 						optional="false"
 						fixedValue="false">
@@ -194,11 +194,11 @@
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="cea2515f-450c-4305-9669-651c2f17e908"
+					id="115baf23c448452ea5e8f249d0c12426"
 					mask="false"
 					optional="false"
 					fixedValue="false">
-				<from>resultddad8b7ae9ab437a9270011671a2b892/token</from>
+				<from>resulta7457113e0fa4f0086eb25f568552961/token</from>
 				<to>token</to>
 			</steps>
 		</steps>
@@ -292,12 +292,12 @@
 						mask="false"
 						optional="false"
 						fixedValue="true">
-					<from>client_credentials</from>
+					<from>jwt</from>
 					<to>login/flow</to>
 				</steps>
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
-						id="b1e15aa6c9c44c9486e150060e5e6671"
+						id="57ef98e2708b4f489ec49ac887b39c1b"
 						mask="false"
 						optional="false"
 						fixedValue="false">

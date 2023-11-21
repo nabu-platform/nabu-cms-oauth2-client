@@ -2,9 +2,11 @@
 <restInterface>
     <method>GET</method>
     <path>/provider/{providerId}/uri</path>
-    <permissionAction>user.authenticate</permissionAction>
+    <permissionAction>oauth2.list</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
-    <useWebApplicationAsPermissionContext>true</useWebApplicationAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
+    <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
+    <useGlobalPermissionContext>true</useGlobalPermissionContext>
     <output>nabu.cms.oauth2.client.web.rest.provider.redirectUri</output>
     <lenient>true</lenient>
     <webApplicationId>true</webApplicationId>
@@ -21,8 +23,10 @@
     <source>false</source>
     <allowRaw>false</allowRaw>
     <domain>false</domain>
+    <origin>false</origin>
     <ignoreOffline>false</ignoreOffline>
     <allowRootArrays>false</allowRootArrays>
     <captureErrors>false</captureErrors>
     <captureSuccessful>false</captureSuccessful>
+    <limitedToInterface>false</limitedToInterface>
 </restInterface>

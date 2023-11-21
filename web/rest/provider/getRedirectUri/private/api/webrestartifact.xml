@@ -2,9 +2,10 @@
 <restInterface>
     <method>GET</method>
     <path>/redirect/{providerName}</path>
-    <permissionAction>user.authenticate</permissionAction>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
-    <useWebApplicationAsPermissionContext>true</useWebApplicationAsPermissionContext>
+    <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
+    <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
+    <useGlobalPermissionContext>false</useGlobalPermissionContext>
     <output>nabu.cms.oauth2.client.web.rest.provider.redirectUri</output>
     <lenient>true</lenient>
     <webApplicationId>true</webApplicationId>
