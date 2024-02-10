@@ -227,7 +227,8 @@
 			id="5147486c-75ce-42d9-a89b-ec5b33202a47"
 			label="input/realm == null"
 			lineNumber="6"
-			message="Can't resolve a user without a realm" xsi:nil="true"/>
+			message="Can't resolve a user without a realm"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Try to find the account by email"
 			disabled="false"
@@ -240,20 +241,11 @@
 				serviceId="nabu.cms.core.crud.user.services.list"
 				resultName="result134e3ac9ee9645c79ea4dd4855e14b71"
 				temporaryMapping="true"
-				x="154"
+				x="444"
 				y="44"
-				invocationOrder="0"
+				invocationOrder="1"
 				asynchronous="false"
 				recache="false">
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
-					id="ebc1e75a-dbd5-4d29-b0af-2495fe4c1e20"
-					mask="false"
-					optional="false"
-					fixedValue="false">
-				<from>input/realm</from>
-				<to>filter/realm[0]</to>
-			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="d91e88fb40f046f4ad2154158849d48b"
@@ -262,6 +254,15 @@
 					fixedValue="false">
 				<from>input/userInfo/email</from>
 				<to>filter/alias</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8de8ce36000242739a32fe6c8605c901"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultd70a0c2f4470485b945886779696e9e1/realms</from>
+				<to>filter/realm</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
@@ -272,6 +273,27 @@
 				fixedValue="false">
 			<from>result134e3ac9ee9645c79ea4dd4855e14b71/results[0]/id</from>
 			<to>output/userId</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="d214f64d16484afbbd1e01c985bdfb54"
+				serviceId="nabu.cms.core.v2.services.user.getAllowedRealms"
+				resultName="resultd70a0c2f4470485b945886779696e9e1"
+				temporaryMapping="true"
+				x="80"
+				y="96"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0b76af877a6f471288c8939db02493c2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/realm</from>
+				<to>realm</to>
+			</steps>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
