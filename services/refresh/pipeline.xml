@@ -7,5 +7,5 @@
     </structure>
     <structure definition="nabu.cms.oauth2.client.types.token" name="refreshedToken"/>
     <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.createInput" name="newLogin" restrict="id"/>
-    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" name="login"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.list" name="login" persister="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.batch.updateAll"/>
 </structure>

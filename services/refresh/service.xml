@@ -111,7 +111,8 @@
 			disabled="false"
 			id="54d7c233-8b1d-48ff-a1c8-25e8ee282dc5"
 			label="refreshedToken"
-			lineNumber="5">
+			lineNumber="5"
+			scopeDefaultTransaction="true">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="7d754a7f-0ddb-4520-bc53-91932f3d8d85"
