@@ -13,9 +13,9 @@
         <field minOccurs="0" name="externalIdTypeId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     </structure>
     <structure definition="be.nabu.libs.http.jwt.JWTBody" minOccurs="0" name="token"/>
-    <structure collectionName="nodeExternalIds" definition="nabu.cms.core.crud.nodeExternalId.types.output" maxOccurs="unbounded" minOccurs="0" name="externalIds"/>
+    <structure collectionName="nodeExternalIds" definition="nabu.cms.core.crud.nodeExternalId.types.output" enricher="nabu.cms.core.crud.nodeExternalId.services.list" maxOccurs="unbounded" minOccurs="0" name="externalIds" persister="nabu.cms.core.crud.nodeExternalId.batch.updateAll"/>
     <field name="totalRowCount" nillable="false" type="java.lang.Long"/>
-    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
     <field name="externalIdTypeId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
     <field name="enrichUserId" type="java.lang.String"/>
 </structure>

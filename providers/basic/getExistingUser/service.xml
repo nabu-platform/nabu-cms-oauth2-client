@@ -295,6 +295,15 @@
 				<to>realm</to>
 			</steps>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d5b206eafdc84069b88f31035739d3d6"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result134e3ac9ee9645c79ea4dd4855e14b71/results[0]/realm</from>
+			<to>output/realm</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="The user exists but does not have the correct externalId set. Add it for future lookups."
@@ -352,9 +361,10 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-			comment="Map output realm"
+			comment="Map output realm if necessary"
 			disabled="false"
 			id="5cf406b6-1ab4-40db-96c0-e6c22fb9f4ad"
+			label="output/realm == null"
 			lineNumber="9">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
