@@ -181,16 +181,18 @@
 			id="07b13a06-f8b3-4007-b3d5-25dfe0de1e5a"
 			label="realm == null"
 			lineNumber="4"
-			message="Can not resolve users without a realm" xsi:nil="true"/>
+			message="Can not resolve users without a realm"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			comment="If it's not an existing user and we don't have a token or email address, we can't do much here"
 			disabled="false"
 			id="4c38b04c-265b-4e1f-b6cd-34080c1c6f61"
 			label="token == null &amp;&amp; userInfo/email == null &amp;&amp; output/userId == null"
 			lineNumber="5"
-			message="No token present and no email available" xsi:nil="true"/>
+			message="No token present and no email available"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
-			disabled="false"
+			disabled="true"
 			id="28a930a6-a63a-4f1e-a151-787a15572dca"
 			lineNumber="6"
 			query="output/userId">
@@ -392,7 +394,7 @@
 				disabled="false"
 				id="f98cbd51-c1ce-45cd-9ea8-ea894c8fec6a"
 				mask="false"
-				optional="false"
+				optional="true"
 				fixedValue="false">
 			<from>realm</from>
 			<to>account/realm</to>
@@ -965,7 +967,8 @@
 					id="aa0ed251-cb5d-4fcf-8f79-411edf20595d"
 					label="!canRegister"
 					lineNumber="28"
-					code="403" xsi:nil="true"/>
+					code="403"
+					whitelist="false" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Create the account"
 					disabled="false"

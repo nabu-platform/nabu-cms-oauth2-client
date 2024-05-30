@@ -143,6 +143,15 @@
 			<from>discovery/issuer</from>
 			<to>output/provider/issuer</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="98e78f742b064f26bf506f69e525df17"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>discovery/end_session_endpoint</from>
+			<to>output/provider/logoutEndpoint</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="If no scopes are requested yet, fill in all the user info scopes at least"

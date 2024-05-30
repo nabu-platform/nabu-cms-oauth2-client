@@ -3,9 +3,9 @@
     <structure name="output"/>
     <structure definition="be.nabu.libs.http.jwt.JWTBody" minOccurs="0" name="token"/>
     <structure definition="nabu.cms.oauth2.client.types.userInfo" minOccurs="0" name="userInfo"/>
-    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
     <field name="externalIdTypeId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" type="java.util.UUID"/>
-    <structure collectionName="accounts" definition="nabu.cms.core.types.emodel.core.Account" duplicate="id, created, modified" label="Account" name="account"/>
+    <structure collectionCrudProvider="account" collectionName="accounts" definition="nabu.cms.core.types.emodel.core.Account" duplicate="id, created, modified" label="Account" name="account"/>
     <field minOccurs="0" name="realm" type="java.lang.String"/>
     <field minOccurs="0" name="externalId" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
     <field name="aliasType" type="java.lang.String"/>

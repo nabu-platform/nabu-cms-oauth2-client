@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-05-24T14:15:14.759+02:00" lastModified="2024-05-24T14:20:01.139+02:00" leaf="true" version="10">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.utils.String.join</references>
+    <references>nabu.utils.Uri.toComponents</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.utils.Object.last</references>
+    <references>nabu.utils.Uri.fromComponents</references>
+    <references>java.util.UUID</references>
+    <references>java.net.URI</references>
+    <references>java.lang.String</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
+</node>

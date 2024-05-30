@@ -4,6 +4,7 @@
     <field comment="The application this provider is active on (if any). Some providers are used for client credential flows only and don't need user roundtripping." minOccurs="0" name="webApplicationId" type="java.lang.String"/>
     <field comment="By default we will take the host provided by the web application. But you can register a custom host for redirect uri generation." minOccurs="0" name="host" type="java.lang.String"/>
     <field comment="We assume you are capturing the response of the OAuth2 provider in your own application. This is the path to the correct file (defaults to &quot;/&quot;)" minOccurs="0" name="processPath" type="java.lang.String"/>
+    <field comment="Where are you redirected once the logout is completed?" minOccurs="0" name="loggedOutPath" type="java.lang.String"/>
     <field comment="Once a user requests a login, how long is that particular request valid?" minOccurs="0" name="maximumLoginWait" type="be.nabu.libs.types.base.Duration"/>
     <field comment="You may need to use a custom http client to get this to work" minOccurs="0" name="httpClientId" type="java.lang.String"/>
     <field comment="A space separated list of scopes you want to request" minOccurs="0" name="requestedScopes" type="java.lang.String"/>
@@ -12,6 +13,7 @@
     <field minOccurs="0" name="clientSecret" type="java.lang.String"/>
     <field comment="The endpoint where we can resolve the token." minOccurs="0" name="tokenEndpoint" type="java.net.URI"/>
     <field comment="The endpoint where the user is redirected to to log in" minOccurs="0" name="authorizationEndpoint" type="java.net.URI"/>
+    <field comment="The endpoint where the user can be logged out" minOccurs="0" name="logoutEndpoint" type="java.net.URI"/>
     <field comment="Might be specific to a resource" minOccurs="0" name="resource" type="java.lang.String"/>
     <field comment="Defaults to POST. But some, like facebook, use a GET. This field is case insenstive" minOccurs="0" name="tokenMethod" type="java.lang.String"/>
     <field comment="The service that can be used to resolve the user info" minOccurs="0" name="userInfoServiceId" type="java.lang.String"/>
