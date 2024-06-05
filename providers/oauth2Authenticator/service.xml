@@ -64,13 +64,15 @@
 			id="9ac70b62-edb2-4cbb-97c2-c3e778b4c653"
 			label="!login"
 			lineNumber="3"
-			message="Invalid login details" xsi:nil="true"/>
+			message="Invalid login details"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
 			id="16349ef5-8296-4fde-a192-3d3489f1cc71"
 			label="login/expires != null &amp;&amp; login/expires &lt; now"
 			lineNumber="4"
-			message="The credentials are expired" xsi:nil="true"/>
+			message="The credentials are expired"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="1bdd4cd2-dd99-4f69-97cb-cfb30e0e7c4e"
@@ -472,6 +474,24 @@
 				fixedValue="false">
 			<from>result60731fea698d45ceb2d0dc45f3fa0fe4/result/alias</from>
 			<to>output/token/name</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="4ec59303a0124ffc8af2f9e0dfa95dd2"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>oauth2</from>
+			<to>output/token/authenticator</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="5fd47d12252d43b4967ff2ef2562ffdf"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>login/id</from>
+			<to>output/token/tokenId</to>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"

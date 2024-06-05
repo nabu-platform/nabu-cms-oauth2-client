@@ -1,0 +1,83 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="3d97a80c9adb44ac9d1c765ad1fa331b"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Break"
+			disabled="false"
+			id="189e20e3256949558a2f6c3409ea09e7"
+			label="input/token/authenticator != &quot;oauth2&quot; || input/token/tokenId == null"
+			lineNumber="2">
+		<count>1</count>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="6834d0cfc2514425a6b6d15b09ca3bc5"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="4608a5b9bef94cafacc17d5f5de9a3c3"
+				serviceId="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.get"
+				resultName="resultc2d1247dd4854e7c95573542d04bf0bf"
+				temporaryMapping="true"
+				x="36"
+				y="72"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="407285fdb1d043aa811a62b3d341a153"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/token/tokenId</from>
+				<to>id</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="7cbac4973da74916b3d8b53bbe1ca91e"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultc2d1247dd4854e7c95573542d04bf0bf/result</from>
+			<to>login</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="9f59099d2c084e1895ef9b20816af533"
+			label="login"
+			lineNumber="4">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="abbffda377b14401a7d39dcea6276788"
+				serviceId="nabu.cms.oauth2.client.providers.getLogoutUri"
+				resultName="result2314276f0c2844dba0e068c57d05977b"
+				temporaryMapping="true"
+				x="329"
+				y="123"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7b867ece800d4e0784575ba4fae4752c"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>login/oauth2ProviderId</from>
+				<to>oauth2ProviderId</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="aaff849518a643a7b3af4a81007a66fa"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result2314276f0c2844dba0e068c57d05977b/logoutUri</from>
+			<to>output/logoutUri</to>
+		</steps>
+	</steps>
+</sequence>

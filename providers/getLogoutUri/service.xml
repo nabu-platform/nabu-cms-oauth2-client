@@ -52,11 +52,48 @@
 			<to>provider/loggedOutPath</to>
 		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+			disabled="false"
+			id="e5a6b034cec047228b41165fbd0a7ff4"
+			lineNumber="4"
+			query="provider/unsecure">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set http"
+				disabled="false"
+				id="d6992be8850d4315a8fe1255ca1975d8"
+				label="true"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="b418b328733142b98a84d6fd99289a87"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>http</from>
+				<to>defaultScheme</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set https"
+				disabled="false"
+				id="09b02f37892643388c506535ad99887c"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2699fa9cb69643faa026b305227ff330"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>https</from>
+				<to>defaultScheme</to>
+			</steps>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Map postLogoutUri"
 			disabled="false"
 			id="0780405edba0424a92d73da71c8732d7"
-			lineNumber="4">
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="bacd366be36144789194797d8993941d"
@@ -157,21 +194,21 @@
 				recache="false">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
-					id="548055d8258e42abae4dcd369958c8b6"
-					mask="false"
-					optional="false"
-					fixedValue="true">
-				<from>https</from>
-				<to>options[0]</to>
-			</steps>
-			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-					disabled="false"
 					id="27893889dc48400b8ac408d76eff560b"
 					mask="false"
 					optional="false"
 					fixedValue="false">
 				<from>result782a8d8f0f284a21bac10fce8f7ccf90/components/scheme</from>
 				<to>options[1]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="28d318df8814451a9f2e484d4ee6d738"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>defaultScheme</from>
+				<to>options[0]</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
@@ -218,7 +255,7 @@
 			disabled="false"
 			id="524c97af425847089a5dfa2fe0c41a32"
 			label="provider/logoutEndpoint != null"
-			lineNumber="5">
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="b20c9f577cd5474787e53393debb48cc"
