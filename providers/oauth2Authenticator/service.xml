@@ -68,15 +68,22 @@
 			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
+			id="92190455a5584ae9a945b2d4c180a3db"
+			label="login/used != null"
+			lineNumber="4"
+			message="Oauth2 redirect link already used"
+			whitelist="false" xsi:nil="true"/>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			disabled="false"
 			id="16349ef5-8296-4fde-a192-3d3489f1cc71"
 			label="login/expires != null &amp;&amp; login/expires &lt; now"
-			lineNumber="4"
+			lineNumber="5"
 			message="The credentials are expired"
 			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="1bdd4cd2-dd99-4f69-97cb-cfb30e0e7c4e"
-			lineNumber="5">
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="b4fab97d-f792-4a6f-9512-ac0091405649"
@@ -130,7 +137,7 @@
 			comment="Create a new user info object so we can merge things into it"
 			disabled="false"
 			id="ea7be862-c4a3-45cd-9497-5e70f84bf597"
-			lineNumber="6">
+			lineNumber="7">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="f8951a3e-15c2-4b7e-9c4c-bf8f69b8478b"
@@ -166,7 +173,7 @@
 			comment="Merge the info we get from the token first"
 			disabled="false"
 			id="b963e6d4-a34d-411a-87f9-e2119d549be8"
-			lineNumber="7">
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="e6be4c47-15ab-4c35-a4db-c1fd69ffae8a"
@@ -250,7 +257,7 @@
 			comment="Then get user info and merge it on top of the token info (so user info wins if relevant)"
 			disabled="false"
 			id="96053940-9985-4b61-86a2-70ae4349890e"
-			lineNumber="8">
+			lineNumber="9">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="2abe1926-178c-4f63-a8ac-ced06911a3b4"
@@ -363,7 +370,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="37e37743-47ec-4081-a5c8-6a031d68cf43"
-			lineNumber="9">
+			lineNumber="10">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7e9059b9-a79f-4041-bdb9-27be0eff1c92"
@@ -426,7 +433,7 @@
 			disabled="false"
 			id="569a219c-b2a8-4530-8c01-eb9d5d50daf8"
 			label="userId != null"
-			lineNumber="10">
+			lineNumber="11">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="cf784773-bcaf-461c-a0d9-7183fcc5ee29"
@@ -497,7 +504,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="cfa1c481-4613-4289-ae04-db3afe90b225"
-			lineNumber="11">
+			lineNumber="12">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="869a3cc2-1438-4d52-a9cf-a372b068b765"
@@ -586,12 +593,12 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="73dc336a-5569-4f45-9a6c-bae14dcee545"
-			lineNumber="12">
+			lineNumber="13">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="b580c3a2-04cd-4835-a3a7-5be33d08e2b1"
 				label="token/expires_in != null"
-				lineNumber="13">
+				lineNumber="14">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="da510a29-2b26-4a49-8e43-26f7040d2a76"
@@ -636,7 +643,7 @@
 				disabled="false"
 				id="0a457f89-b6b2-4223-bce3-d851ed2bf5ac"
 				label="token/expires_on != null"
-				lineNumber="14">
+				lineNumber="15">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="d1c2d2c4-e022-442a-925c-b044770b9177"
@@ -682,7 +689,7 @@
 			disabled="false"
 			id="b9862d7b-f6f1-4f64-86c5-fc3df15f5b6d"
 			label="token/not_before != null"
-			lineNumber="15">
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="fa5c14ae-fc2a-4ab5-a5e5-5876b1e8276f"
@@ -726,7 +733,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="5f595270-e783-4945-bb24-f01d69f718ec"
-			lineNumber="16">
+			lineNumber="17">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d670194e-8090-4602-9990-d4d41b0790f4"
@@ -761,7 +768,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="3f3eec1790ae44a2acecd9ba2389b73a"
-			lineNumber="17">
+			lineNumber="18">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="fee5c0624658464da0fc05960e7a123f"
@@ -797,7 +804,7 @@
 			disabled="false"
 			id="90ea99a9c9c546f9a8acc3956c6889d0"
 			label="provider/handleAuthenticationServiceId != null"
-			lineNumber="18">
+			lineNumber="19">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="d76b69c5ed824de5bfa837ade3b923dd"
