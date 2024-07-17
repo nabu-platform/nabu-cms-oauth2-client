@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2024-02-06T14:59:20.454+01:00" leaf="true" version="59">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2024-07-17T12:48:16.554+02:00" leaf="true" version="60">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -18,8 +18,8 @@
     <references>nabu.web.application.Services.information</references>
     <references>nabu.utils.String.replace</references>
     <references>java.lang.Long</references>
-    <references>java.net.URI</references>
     <references>java.lang.String</references>
+    <references>java.net.URI</references>
     <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
     <references>nabu.cms.oauth2.client.specs.getRedirectUri</references>
     <references>nabu.utils.String.split</references>

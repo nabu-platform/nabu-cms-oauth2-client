@@ -830,9 +830,25 @@
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="If we have a language preference, add it"
+			disabled="false"
+			id="92157eb965cc4b92b02b67c35b380eab"
+			label="input/language != null"
+			lineNumber="31">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="1d370cdeadc44525b5a43eb9c2e46f30"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>=requestContent + "&amp;ui_locales=" + /input/language</from>
+			<to>requestContent</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="24beebef-b2c4-4204-a9fa-013fe8d0e571"
-			lineNumber="31">
+			lineNumber="32">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="c8a0e82e-85ba-4cec-ad23-1d5da84a2097"
@@ -858,7 +874,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="125dd3a9-92c1-473e-94b2-6d03a73ce53c"
-			lineNumber="32">
+			lineNumber="33">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="178c110c-c4ca-4821-9ac4-31277115af87"
@@ -893,13 +909,13 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="ea8c3427-8790-44a1-89dd-7fadac8493ec"
-			lineNumber="33"
+			lineNumber="34"
 			query="authorizationComponents/query">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="441b8292-b590-4ea7-9371-9c56a0e673fc"
 				label="null"
-				lineNumber="34">
+				lineNumber="35">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="9a094a2e-e5a0-4580-91bd-b99acac3c6e8"
@@ -913,7 +929,7 @@
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="e8b25065-f862-4ce0-9421-1dd971a959f6"
-				lineNumber="35">
+				lineNumber="36">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="2287c70b-45e3-4314-99f5-25e0bcb2be91"
@@ -928,7 +944,7 @@
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="7961e390-a533-42da-bddc-8dbd428e4d4b"
-			lineNumber="36">
+			lineNumber="37">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="924fa3db-db05-457f-bd1b-a88974d73c5f"

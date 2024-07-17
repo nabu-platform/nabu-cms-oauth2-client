@@ -5,6 +5,6 @@
     <structure name="output">
         <field name="redirectUri" type="java.net.URI"/>
     </structure>
-    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
     <field name="implementationId" type="java.lang.String"/>
 </structure>

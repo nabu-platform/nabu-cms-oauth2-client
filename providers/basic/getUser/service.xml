@@ -887,11 +887,27 @@
 				label="null"
 				lineNumber="26">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					comment="If we have a default realm for new accounts, set it"
+					disabled="false"
+					id="866a2e410d4b4224b0aa05d1af745e7a"
+					label="provider/defaultRealm != null"
+					lineNumber="27">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="a196a237306b44a288e11c04bcb8facc"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>provider/defaultRealm</from>
+					<to>account/realm</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="If we have a web application, check registration privileges"
 					disabled="false"
 					id="81aff6f6-ac41-4735-a4c4-6558eb3bd79e"
 					label="provider/webApplicationId != null"
-					lineNumber="27">
+					lineNumber="28">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="60acec10-2455-46f4-ae5e-c12965c6f713"
@@ -966,14 +982,14 @@
 					disabled="false"
 					id="aa0ed251-cb5d-4fcf-8f79-411edf20595d"
 					label="!canRegister"
-					lineNumber="28"
+					lineNumber="29"
 					code="403"
 					whitelist="false" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Create the account"
 					disabled="false"
 					id="451b8d29-3153-4e68-aee7-b68ee70dd447"
-					lineNumber="29">
+					lineNumber="30">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="f59fe3cd-3f10-4f8b-8a34-6eee236be62d"
@@ -1010,13 +1026,13 @@
 				comment="Update the account"
 				disabled="false"
 				id="d76f73e0-5400-4be7-af4f-4439f7a74ac1"
-				lineNumber="30">
+				lineNumber="31">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Get the alias type, if it is an email, we want it to be in sync. You may have updated your email at the external provider."
 					disabled="false"
 					id="056c6647-eda7-4fa5-932d-804fc34b20b8"
 					label="account/aliasTypeId != null"
-					lineNumber="31">
+					lineNumber="32">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="0946a6b6-ea4a-4536-95f8-04dd2cfca646"
@@ -1053,12 +1069,12 @@
 					disabled="false"
 					id="20c9f198-017a-4852-8e1d-5c5cf208fce0"
 					label="aliasType == &quot;email&quot; &amp;&amp; userInfo/email != null &amp;&amp; userInfo/email != account/alias"
-					lineNumber="32">
+					lineNumber="33">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 						comment="Update the alias"
 						disabled="false"
 						id="a777ece2-83ec-43e5-b7d3-75c88b1e57f4"
-						lineNumber="33">
+						lineNumber="34">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 							disabled="false"
 							id="875ba0e0-0f7e-483c-897a-163a23e71d7b"
@@ -1074,7 +1090,7 @@
 						disabled="false"
 						id="b12db3ec-f630-4fc7-afd0-627a6db56402"
 						label="userInfo/email_verified == false"
-						lineNumber="34">
+						lineNumber="35">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
 							disabled="false"
 							id="8aa4bcad-b86b-4355-ada6-3f6fd84aec92"
@@ -1084,7 +1100,7 @@
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="7bdc2488-e86d-459f-83b4-a08dcdda48ac"
-					lineNumber="35">
+					lineNumber="36">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 						disabled="false"
 						id="0fe34637-50cc-45bc-9123-0eeda7817ae7"
@@ -1132,7 +1148,7 @@
 			disabled="false"
 			id="c48525c5248243198b23f4d3f5f66b74"
 			label="externalId == null &amp;&amp; token != null"
-			lineNumber="36">
+			lineNumber="37">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7a47b6e8b06849c4a14cc41697ec6b24"

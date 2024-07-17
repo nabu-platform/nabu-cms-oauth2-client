@@ -5,7 +5,7 @@
     <structure name="output">
         <field name="redirectUri" type="java.net.URI"/>
     </structure>
-    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="openidProviders" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
     <field minOccurs="0" name="path" type="java.lang.String"/>
     <field minOccurs="0" name="localRedirectUri" type="java.net.URI"/>
     <field name="requestContent" type="java.lang.String"/>

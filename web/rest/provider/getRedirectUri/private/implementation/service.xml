@@ -52,7 +52,8 @@
 			id="82c9cb14-fbc3-4af7-b5e9-f70281f19ae9"
 			label="!provider"
 			lineNumber="3"
-			message="Unknown provider" xsi:nil="true"/>
+			message="Unknown provider"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="079570b5-e8ee-406f-a609-4484de4888ce"
@@ -76,6 +77,15 @@
 					fixedValue="false">
 				<from>provider/id</from>
 				<to>oauth2ProviderId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d89997c52ce047bd8fc6ff7d24f714cb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/language</from>
+				<to>language</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
