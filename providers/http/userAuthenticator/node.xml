@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2024-10-23T16:48:34.139+02:00" lastModified="2024-10-23T17:45:32.839+02:00" leaf="true" version="10">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties>
+        <property key="authenticationType">oauth2:user</property>
+    </properties>
+    <references>be.nabu.libs.http.api.HTTPRequestAuthenticator.authenticate</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.list</references>
+    <references>nabu.cms.core.services.user.getCurrent</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.cms.core.types.emodel.core.User</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.cms.oauth2.client.services.getActiveToken</references>
+    <references>be.nabu.libs.http.api.HTTPResponse</references>
+    <references>nabu.data.mime.Services.setHeader</references>
+    <references>be.nabu.libs.http.api.HTTPRequest</references>
+    <references>java.lang.Boolean</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
+    <references>java.lang.String</references>
+    <references>nabu.data.mime.Services.newHeader</references>
+</node>

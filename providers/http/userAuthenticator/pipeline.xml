@@ -1,0 +1,8 @@
+<structure interface="be.nabu.libs.http.api.HTTPRequestAuthenticator.authenticate" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" minOccurs="0" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
+    <field name="total" nillable="false" type="java.lang.Integer"/>
+    <structure collectionCrudProvider="user" collectionName="Users" definition="nabu.cms.core.types.emodel.core.User" duplicate="id, created, modified" id="127-0-1-1-40ef4a87:15793f51e3b:-8000:0000000000000C68" minOccurs="0" name="current" namespace="nabu.cms.core.types.emodel.core"/>
+    <structure definition="nabu.cms.oauth2.client.types.token" minOccurs="0" name="token"/>
+</structure>

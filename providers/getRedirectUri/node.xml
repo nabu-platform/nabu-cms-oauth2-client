@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:12:29.503+02:00" lastModified="2024-07-17T12:45:30.234+02:00" leaf="true" version="8">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:12:29.503+02:00" lastModified="2024-10-25T13:50:52.579+02:00" leaf="true" version="10">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>java.lang.Boolean</references>
     <references>java.util.UUID</references>
     <references>java.lang.String</references>
     <references>java.net.URI</references>

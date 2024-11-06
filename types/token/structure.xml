@@ -1,5 +1,5 @@
 <structure name="token">
-    <field name="access_token" type="java.lang.String"/>
+    <field minOccurs="0" name="access_token" type="java.lang.String"/>
     <field name="token_type" type="java.lang.String"/>
     <field minOccurs="0" name="refresh_token" type="java.lang.String"/>
     <field minOccurs="0" name="scope" type="java.lang.String"/>

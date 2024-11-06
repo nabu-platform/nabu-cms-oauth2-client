@@ -9,7 +9,7 @@
     <structure name="output">
         <structure definition="nabu.cms.oauth2.client.types.token" name="token"/>
     </structure>
-    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" name="provider"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
     <field name="requestContent" type="java.lang.String"/>
     <field minOccurs="0" name="encodedCode" type="java.lang.String"/>
     <field minOccurs="0" name="password" type="java.lang.String"/>
@@ -20,4 +20,5 @@
     <structure definition="be.nabu.libs.http.api.HTTPResponse" minOccurs="0" name="tokenResponse"/>
     <structure definition="be.nabu.utils.mime.api.Part" minOccurs="0" name="request"/>
     <field name="size" type="java.lang.Long"/>
+    <field minOccurs="0" name="responseContent" type="java.lang.String"/>
 </structure>

@@ -1,0 +1,7 @@
+<structure interface="nabu.cms.core.hooks.user.anonymize" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="masterDataCategories" definition="nabu.cms.core.crud.masterDataCategory.types.output" enricher="nabu.cms.core.crud.masterDataCategory.services.list" maxOccurs="unbounded" minOccurs="0" name="openIdIssuerCategories" persister="nabu.cms.core.crud.masterDataCategory.batch.updateAll"/>
+    <structure collectionName="masterDataEntries" definition="nabu.cms.core.crud.masterDataEntry.types.output" enricher="nabu.cms.core.crud.masterDataEntry.services.list" maxOccurs="unbounded" minOccurs="0" name="openIdIssuerEntries" persister="nabu.cms.core.crud.masterDataEntry.batch.updateAll"/>
+    <structure collectionName="nodeExternalIds" definition="nabu.cms.core.crud.nodeExternalId.types.output" enricher="nabu.cms.core.crud.nodeExternalId.services.list" maxOccurs="unbounded" minOccurs="0" name="nodeExternalIds" persister="nabu.cms.core.crud.nodeExternalId.batch.updateAll"/>
+</structure>

@@ -42,25 +42,29 @@
 			id="afbe88bb-46cc-42ab-ba53-225857208d64"
 			label="!provider"
 			lineNumber="3"
-			message="Invalid provider" xsi:nil="true"/>
+			message="Invalid provider"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
 			id="c332c02c-f669-4cfa-98d7-94393dc9e08a"
 			label="provider/clientId == null"
 			lineNumber="4"
-			message="Client id is not configured" xsi:nil="true"/>
+			message="Client id is not configured"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
 			id="9fce2d8d-1720-472e-be84-b3cf0aa89461"
 			label="provider/clientSecret == null"
 			lineNumber="5"
-			message="Client secret is not configured" xsi:nil="true"/>
+			message="Client secret is not configured"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 			disabled="false"
 			id="c6c6aa6ce52942de8c8c1506989b266c"
 			label="provider/tokenEndpoint == null"
 			lineNumber="6"
-			message="Token endpoint not configured" xsi:nil="true"/>
+			message="Token endpoint not configured"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
 			disabled="false"
 			id="fa2fe8fa-c052-40b0-ba76-8d26319ec6e0"
@@ -1164,17 +1168,90 @@
 			</steps>
 		</steps>
 	</steps>
-	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
-			description="=&quot;Invalid response from token endpoint: &quot; + tokenResponse/code"
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			comment="Throw an exception but attempt to resolve the response content first, it might clarify the issue"
 			disabled="false"
-			id="a1663486-6e56-4c5f-a253-5054171674b2"
+			id="6a2a02605f904718a3a253711451b404"
 			label="tokenResponse/code &lt; 200 || tokenResponse/code &gt;= 300"
-			lineNumber="41"
-			message="Invalid response from token endpoint" xsi:nil="true"/>
+			lineNumber="41">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="2c1701448b3e4402bbddd380983deeba"
+				lineNumber="42">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="d3b1e1479bb941be988fbdab1080c33d"
+					serviceId="nabu.data.mime.Services.getContent"
+					resultName="result56bbfb76178f49d8bfb0173299ae4d73"
+					temporaryMapping="true"
+					x="118"
+					y="90"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="ff7b0d6e97eb48cdbb67f7e2433df734"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>tokenResponse/content</from>
+					<to>part</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="833b6948c7494987a01857063dec87dd"
+					serviceId="nabu.utils.Stream.toString"
+					resultName="result0f8995f446864a0c8a3c0f392856a408"
+					temporaryMapping="true"
+					x="362"
+					y="222"
+					invocationOrder="1"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="846278459be24267acb15fabe4108caa"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>result56bbfb76178f49d8bfb0173299ae4d73/content</from>
+					<to>stream</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d283f73b563c4908af12c784bf4fdd89"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>UTF-8</from>
+					<to>charset</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4fe350f68da74ac0a354e63baa609060"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result0f8995f446864a0c8a3c0f392856a408/string</from>
+				<to>responseContent</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+				description="=&quot;Invalid response from token endpoint: &quot; + tokenResponse/code"
+				disabled="false"
+				id="a1663486-6e56-4c5f-a253-5054171674b2"
+				lineNumber="43"
+				message="Invalid response from token endpoint"
+				data="=responseContent"
+				whitelist="false" xsi:nil="true"/>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="b2a5c2c0-88a8-4ecb-a63f-6646769316ad"
-			lineNumber="42">
+			lineNumber="44">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="7c8afa2c-f484-41ab-894c-af671538ae8f"

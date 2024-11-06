@@ -114,6 +114,15 @@
 				<from>input/language</from>
 				<to>language</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="038c5b4531ae4876a7d2967f0ef27547"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/silent</from>
+				<to>silent</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
