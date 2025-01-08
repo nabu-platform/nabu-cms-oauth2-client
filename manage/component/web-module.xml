@@ -7,4 +7,5 @@
     <webFragments>nabu.cms.oauth2.client.manage.rest.openId.discover</webFragments>
     <webFragments>nabu.cms.oauth2.client.manage.rest.oauth2.getRedirectUri</webFragments>
     <webFragments>nabu.cms.oauth2.client.manage.rest.application.list</webFragments>
+    <audience>MANAGER</audience>
 </webModule>

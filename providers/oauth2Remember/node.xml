@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-11-01T14:36:03.172+01:00" lastModified="2022-11-01T14:51:30.931+01:00" leaf="true" version="15">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-11-01T14:36:03.172+01:00" lastModified="2025-01-08T10:27:06.624+01:00" leaf="true" version="16">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties>
         <property key="authenticationType">oauth2</property>
     </properties>

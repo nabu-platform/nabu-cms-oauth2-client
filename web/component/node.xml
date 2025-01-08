@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-04-24T08:21:18.243+02:00" lastModified="2022-11-25T17:17:48.499+01:00" leaf="true" version="10">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.web.component.WebComponentManager" created="2022-04-24T08:21:18.243+02:00" lastModified="2024-12-03T15:24:58.848+01:00" leaf="true" version="11">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.cms.oauth2.client.web.rest.provider.getRedirectUri</references>
+    <references>nabu.cms.oauth2.client.web.rest.provider.getSilentRedirectUri</references>
     <tags>OAuth2</tags>
 </node>

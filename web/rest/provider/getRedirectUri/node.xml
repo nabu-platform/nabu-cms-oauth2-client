@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-09-21T17:13:57.572+02:00" lastModified="2024-07-17T12:45:48.226+02:00" leaf="true" version="17">
-    <environmentId>apollo</environmentId>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2022-09-21T17:13:57.572+02:00" lastModified="2025-01-08T10:46:50.644+01:00" leaf="true" version="21">
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
@@ -9,4 +9,5 @@
     <references>nabu.cms.oauth2.client.providers.getRedirectUri</references>
     <references>nabu.cms.oauth2.client.manage.crud.oauth2Provider.services.list</references>
     <references>java.lang.String</references>
+    <references>be.nabu.libs.authentication.api.Device</references>
 </node>

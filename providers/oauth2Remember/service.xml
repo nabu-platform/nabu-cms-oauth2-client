@@ -165,6 +165,15 @@
 				<from>refreshed/expires</from>
 				<to>input/token/validUntil</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="eb4a4f8202ea4e688c52f2c33a8da11f"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>refreshed</from>
+				<to>login</to>
+			</steps>
 		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restInterface>
     <method>GET</method>
-    <path>/redirect/{providerName}</path>
+    <path>/silent</path>
     <useServiceContextAsPermissionContext>false</useServiceContextAsPermissionContext>
     <useWebApplicationAsPermissionContext>false</useWebApplicationAsPermissionContext>
     <useProjectAsPermissionContext>false</useProjectAsPermissionContext>
@@ -10,7 +10,7 @@
     <device>true</device>
     <deviceBestEffort>true</deviceBestEffort>
     <lenient>true</lenient>
-    <webApplicationId>true</webApplicationId>
+    <webApplicationId>false</webApplicationId>
     <geoPosition>false</geoPosition>
     <useAsAuthorizationServiceContext>false</useAsAuthorizationServiceContext>
     <language>true</language>

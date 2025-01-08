@@ -1,0 +1,6 @@
+<structure interface="nabu.cms.oauth2.client.web.rest.provider.getSilentRedirectUri:api" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.list" minOccurs="0" name="lastLogin" persister="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.batch.updateAll"/>
+    <structure collectionName="oauth2Providers" definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2Provider.services.list" name="provider" persister="nabu.cms.oauth2.client.crud.oauth2Provider.batch.updateAll"/>
+</structure>

@@ -2,4 +2,5 @@
 <webModule>
     <path>/oauth2</path>
     <webFragments>nabu.cms.oauth2.client.web.rest.provider.getRedirectUri</webFragments>
+    <webFragments>nabu.cms.oauth2.client.web.rest.provider.getSilentRedirectUri</webFragments>
 </webModule>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.rest.provider.RESTServiceManager" created="2024-12-03T15:21:20.653+01:00" lastModified="2025-01-08T10:47:04.225+01:00" leaf="true" version="14">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.cms.oauth2.client.web.rest.provider.redirectUri</references>
+    <references>nabu.cms.oauth2.client.providers.getRedirectUri</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>java.lang.String</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.list</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
+    <references>be.nabu.libs.authentication.api.Device</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output</references>
+</node>

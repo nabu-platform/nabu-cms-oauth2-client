@@ -17,4 +17,5 @@
     <field minOccurs="0" name="notBefore" timezone="UTC" type="java.util.Date"/>
     <field comment="If requested by jwt token, this is the identifier" minOccurs="0" name="jti" type="java.lang.String"/>
     <field comment="The flow used to generate this token" minOccurs="0" name="flow" type="java.lang.String"/>
+    <field comment="The device used for this authentication" minOccurs="0" name="deviceId" type="java.lang.String"/>
 </structure>

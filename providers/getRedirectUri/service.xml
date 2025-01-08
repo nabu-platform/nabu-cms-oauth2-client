@@ -123,6 +123,15 @@
 				<from>input/silent</from>
 				<to>silent</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="0320908625224de6badb6a6eff367915"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/deviceId</from>
+				<to>deviceId</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

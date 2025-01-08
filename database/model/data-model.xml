@@ -25,7 +25,7 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.cms.oauth2.client.database.types.openidProvider</type>
-        <x>183</x>
-        <y>905</y>
+        <x>208</x>
+        <y>980</y>
     </entries>
 </dataModel>

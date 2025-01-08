@@ -3,6 +3,7 @@
     <field comment="A human readable name for this provider" name="name" type="java.lang.String"/>
     <field comment="The application this provider is active on (if any). Some providers are used for client credential flows only and don't need user roundtripping." minOccurs="0" name="webApplicationId" type="java.lang.String"/>
     <field comment="By default we will take the host provided by the web application. But you can register a custom host for redirect uri generation." minOccurs="0" name="host" type="java.lang.String"/>
+    <field comment="If set to true, we will use the requesting domain to build the redirect URI. This allows for multiple domains to use the same provider." minOccurs="0" name="useDomain" type="java.lang.Boolean"/>
     <field comment="We assume you are capturing the response of the OAuth2 provider in your own application. This is the path to the correct file (defaults to &quot;/&quot;)" minOccurs="0" name="processPath" type="java.lang.String"/>
     <field comment="Where are you redirected once the logout is completed?" minOccurs="0" name="loggedOutPath" type="java.lang.String"/>
     <field comment="Once a user requests a login, how long is that particular request valid?" minOccurs="0" name="maximumLoginWait" type="be.nabu.libs.types.base.Duration"/>
@@ -33,4 +34,5 @@
     <field comment="An encoded version of the key to be used to sign the jwt tokens" minOccurs="0" name="jwtKey" type="java.lang.String"/>
     <field comment="You can explicitly set it to unsecure if you want to use http instead of https for redirect. This should only really be necessary for localhost testing" minOccurs="0" name="unsecure" type="java.lang.Boolean"/>
     <field comment="The default realm where users will be created in if needed" minOccurs="0" name="defaultRealm" type="java.lang.String"/>
+    <field comment="If you enable silent login for this provider, we can do a best effort remember" minOccurs="0" name="allowSilent" type="java.lang.Boolean"/>
 </structure>

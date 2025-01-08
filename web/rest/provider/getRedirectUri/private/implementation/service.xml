@@ -87,6 +87,24 @@
 				<from>input/language</from>
 				<to>language</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="3d883c2333b84a35bf427bcf7f8df34b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/device/deviceId</from>
+				<to>deviceId</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8b76a26a48794dcf8624cc4e5174e8a0"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/domain</from>
+				<to>domain</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
