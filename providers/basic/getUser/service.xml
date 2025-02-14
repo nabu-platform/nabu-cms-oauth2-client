@@ -984,6 +984,9 @@
 					label="!canRegister"
 					lineNumber="29"
 					code="403"
+					message="Not allowed to register as new user"
+					alias="=account/alias"
+					realm="=account/realm"
 					whitelist="false" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					comment="Create the account"
