@@ -46,11 +46,11 @@
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
-				id="c7bad418-ea0b-49f7-9c99-f97bd7aa7e29"
+				id="bb037382c9194e18961a6e117ba168c6"
 				mask="false"
 				optional="false"
 				fixedValue="false">
-			<from>result5de1099215f4478395aae21d2495ae88/page/total</from>
+			<from>result5de1099215f4478395aae21d2495ae88/page/totalRowCount</from>
 			<to>total</to>
 		</steps>
 	</steps>
