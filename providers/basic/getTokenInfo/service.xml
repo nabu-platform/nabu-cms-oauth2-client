@@ -114,6 +114,15 @@
 				<from>jwt/values</from>
 				<to>output/claims</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2f19190bb99944d7b483c133053cf228"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>jwt/values[key == "upn"]/value</from>
+				<to>upn</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
@@ -145,6 +154,13 @@
 				<from>jwt/values[key == "emails[0]"]/value</from>
 				<to>output/tokenInfo/email</to>
 			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="If we still don't have an email address, look for upn claim. A non-standard microsoft claim that often contains the email address"
+				disabled="false"
+				id="5092110abe8a44a78825886ce328538f"
+				label="output/tokenInfo/email == null &amp;&amp; upn != null &amp;&amp; upn ~ &quot;^.+@.+\..+$&quot;"
+				lineNumber="7">
 		</steps>
 	</steps>
 </sequence>
