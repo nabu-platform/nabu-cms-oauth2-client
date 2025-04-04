@@ -161,6 +161,15 @@
 				id="5092110abe8a44a78825886ce328538f"
 				label="output/tokenInfo/email == null &amp;&amp; upn != null &amp;&amp; upn ~ &quot;^.+@.+\..+$&quot;"
 				lineNumber="7">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="025427d8b11e48fcbb3234b8e8c0024e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>upn</from>
+				<to>output/tokenInfo/email</to>
+			</steps>
 		</steps>
 	</steps>
 </sequence>

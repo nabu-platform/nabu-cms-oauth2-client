@@ -132,6 +132,15 @@
 				<from>input/deviceId</from>
 				<to>deviceId</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2afb5592018b41109076c2884c9c99a4"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/domain</from>
+				<to>domain</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
