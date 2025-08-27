@@ -13,8 +13,8 @@
     <entries>
         <synchronize>true</synchronize>
         <type>nabu.cms.oauth2.client.database.types.oauth2Provider</type>
-        <x>103</x>
-        <y>66</y>
+        <x>85</x>
+        <y>1</y>
     </entries>
     <entries>
         <synchronize>true</synchronize>

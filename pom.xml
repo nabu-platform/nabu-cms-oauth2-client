@@ -16,10 +16,6 @@
 		</dependency>
 		<dependency>
 			<groupId>nabu.types</groupId>
-			<artifactId>uml</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>nabu.types</groupId>
 			<artifactId>structure</artifactId>
 		</dependency>
 		<dependency>
@@ -29,6 +25,58 @@
 		<dependency>
 			<groupId>nabu.services</groupId>
 			<artifactId>vm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.types</groupId>
+			<artifactId>simple</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu</groupId>
+			<artifactId>utils</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.protocols.http</groupId>
+			<artifactId>client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.data</groupId>
+			<artifactId>mime</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.data</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.security</groupId>
+			<artifactId>jwk</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.services</groupId>
+			<artifactId>crud</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.web.rest</groupId>
+			<artifactId>provider</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.web</groupId>
+			<artifactId>component</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.services</groupId>
+			<artifactId>iface</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.cms</groupId>
+			<artifactId>core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.types</groupId>
+			<artifactId>model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>nabu.misc</groupId>
+			<artifactId>cache</artifactId>
 		</dependency>
 	</dependencies>
 </project>
