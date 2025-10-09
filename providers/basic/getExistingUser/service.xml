@@ -184,13 +184,28 @@
 			<from>resultbfde01042ed240fb867416242aa0b794/entryId</from>
 			<to>output/externalIdTypeId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d1865deb84fd44c5ac43ac5a66a306da"
+				fixedValue="false">
+			<from>result16bcd068c79f4fa0b738fee57b952212/page/totalRowCount</from>
+			<to>totalRowCount</to>
+		</steps>
 	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+			description="=&quot;Multiple users match the openid identifier: &quot; + token/sub"
+			disabled="false"
+			id="1ce92c4a7eae4ae7857db1e4f343f31f"
+			label="totalRowCount &gt;= 2"
+			lineNumber="5"
+			message="Multiple users match the openid identifier"
+			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			comment="Get information"
 			disabled="false"
 			id="67d2fb6c-a7bd-459f-a550-23a31ddd4508"
 			label="input/realm == null &amp;&amp; provider/webApplicationId != null"
-			lineNumber="5">
+			lineNumber="6">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="a9930d79-d7ae-4917-a806-2e8fdad2d3cc"
@@ -226,7 +241,7 @@
 			disabled="false"
 			id="5147486c-75ce-42d9-a89b-ec5b33202a47"
 			label="input/realm == null"
-			lineNumber="6"
+			lineNumber="7"
 			message="Can't resolve a user without a realm"
 			whitelist="false" xsi:nil="true"/>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
@@ -234,7 +249,7 @@
 			disabled="false"
 			id="017c65f4-c304-4bc5-b067-fc9f3c0d2e89"
 			label="output/userId == null &amp;&amp; input/userInfo/email != null"
-			lineNumber="7">
+			lineNumber="8">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="494a6ea7-8a03-4edb-a2e4-23424ebce00b"
@@ -310,7 +325,7 @@
 			disabled="false"
 			id="4aa914bc-f122-4df3-8cc4-47d51532a258"
 			label="output/userId != null &amp;&amp; token != null &amp;&amp; output/externalId == null"
-			lineNumber="8">
+			lineNumber="9">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="0fbe135c-ffbb-484c-bf90-56c04724285d"
@@ -365,7 +380,7 @@
 			disabled="false"
 			id="5cf406b6-1ab4-40db-96c0-e6c22fb9f4ad"
 			label="output/realm == null"
-			lineNumber="9">
+			lineNumber="10">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
 				id="17f3dd90-c8ba-484a-92ad-e26512acb4ab"

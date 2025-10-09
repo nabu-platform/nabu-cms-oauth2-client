@@ -62,6 +62,13 @@
 				<from>true</from>
 				<to>filter/hasToken</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ff5195f7e8114ea88184581103637aa5"
+					fixedValue="true">
+				<from>NONE</from>
+				<to>totalCount</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -508,6 +515,7 @@
 				id="7ca673d5-c3b3-4375-b9b6-a302d202b83c"
 				label="expiryDate &lt; nowDate"
 				lineNumber="9"
-				message="Can not retrieve active token" xsi:nil="true"/>
+				message="Can not retrieve active token"
+				whitelist="false" xsi:nil="true"/>
 	</steps>
 </sequence>

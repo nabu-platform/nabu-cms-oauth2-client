@@ -63,6 +63,13 @@
 				<from>used desc</from>
 				<to>orderBy[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="df48c1c0d83f48d3a23a671027a42da1"
+					fixedValue="true">
+				<from>NONE</from>
+				<to>totalCount</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

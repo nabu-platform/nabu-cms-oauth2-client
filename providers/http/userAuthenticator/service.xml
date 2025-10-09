@@ -34,6 +34,13 @@
 				<from>input/context</from>
 				<to>filter/name[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="581197c7437d43cb9fce6327c6613b5f"
+					fixedValue="true">
+				<from>NONE</from>
+				<to>totalCount</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"

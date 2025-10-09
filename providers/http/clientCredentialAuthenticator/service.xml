@@ -34,6 +34,13 @@
 				<from>input/context</from>
 				<to>filter/name[0]</to>
 			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="6d01826382d0422aa3ad45b010029a6a"
+					fixedValue="true">
+				<from>NONE</from>
+				<to>totalCount</to>
+			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 				disabled="false"
@@ -120,6 +127,13 @@
 					fixedValue="true">
 				<from>created desc</from>
 				<to>orderBy[0]</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8368701420af4d888bacdc6b35f82c17"
+					fixedValue="true">
+				<from>NONE</from>
+				<to>totalCount</to>
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Link"

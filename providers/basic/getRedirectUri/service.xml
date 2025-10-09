@@ -787,6 +787,25 @@
 			<from>input/deviceId</from>
 			<to>login/deviceId</to>
 		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="593aa2754d854a889f8f139c0c72d45a"
+				serviceId="nabu.utils.Runtime.getCurrentToken"
+				resultName="result80d90e539c19472eacfa77c65dc24233"
+				temporaryMapping="true"
+				x="194"
+				y="390"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="588b67055dbb4fbea0238014888e7da2"
+				fixedValue="false">
+			<from>result80d90e539c19472eacfa77c65dc24233/token/authenticationId</from>
+			<to>login/requestorAuthenticationId</to>
+		</steps>
 	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"

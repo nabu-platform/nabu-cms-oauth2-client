@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:09:59.375+02:00" lastModified="2022-11-08T16:25:01.268+01:00" leaf="true" version="34">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-23T12:09:59.375+02:00" lastModified="2025-10-08T11:44:29.533+02:00" leaf="true" version="35">
     <comment>Get an active token for the given user</comment>
-    <environmentId>apollo</environmentId>
+    <environmentId>ares</environmentId>
     <hidden>false</hidden>
+    <locked>false</locked>
     <properties/>
     <references>nabu.utils.Date.diff</references>
     <references>java.lang.Long</references>

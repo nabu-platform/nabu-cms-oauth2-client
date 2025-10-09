@@ -6,7 +6,7 @@
     <structure name="output">
         <structure definition="nabu.cms.oauth2.client.types.token" minOccurs="0" name="token"/>
     </structure>
-    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" minOccurs="0" name="last"/>
+    <structure collectionName="oauth2ProviderLogins" definition="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.types.output" enricher="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.services.list" minOccurs="0" name="last" persister="nabu.cms.oauth2.client.crud.oauth2ProviderLogin.batch.updateAll"/>
     <field minOccurs="0" name="expires" type="java.lang.Long"/>
     <field minOccurs="0" name="now" type="java.lang.Long"/>
     <field minOccurs="0" name="expiryDate" type="java.util.Date"/>

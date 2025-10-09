@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2025-01-08T10:45:16.459+01:00" leaf="true" version="64">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2022-04-22T15:22:07.732+02:00" lastModified="2025-09-24T16:14:36.316+02:00" leaf="true" version="65">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
+    <references>nabu.utils.Runtime.getCurrentToken</references>
     <references>nabu.utils.types.UriComponents</references>
+    <references>java.util.Date</references>
     <references>nabu.utils.Server.uuid</references>
-    <references>nabu.utils.Date.now</references>
-    <references>nabu.utils.Uri.toComponents</references>
-    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
     <references>nabu.utils.Uri.fromComponents</references>
-    <references>nabu.utils.Uri.encodeUriComponent</references>
-    <references>java.util.UUID</references>
+    <references>nabu.cms.core.types.emodel.core.User</references>
+    <references>java.lang.Integer</references>
     <references>nabu.utils.Uri.encodeUri</references>
     <references>nabu.services.jdbc.Services.insert</references>
     <references>nabu.cms.oauth2.client.database.types.oauth2ProviderLogin</references>
     <references>nabu.web.application.Services.information</references>
-    <references>nabu.utils.String.replace</references>
     <references>java.lang.Long</references>
     <references>java.lang.Boolean</references>
     <references>java.lang.String</references>
     <references>java.net.URI</references>
-    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
     <references>nabu.cms.oauth2.client.specs.getRedirectUri</references>
     <references>nabu.utils.String.split</references>
+    <references>nabu.utils.Date.now</references>
+    <references>nabu.utils.Uri.toComponents</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.utils.Uri.encodeUriComponent</references>
+    <references>java.util.UUID</references>
+    <references>nabu.utils.String.replace</references>
+    <references>nabu.cms.oauth2.client.database.types.oauth2Provider</references>
+    <references>java.lang.Object</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.get</references>
     <references>nabu.utils.Date.incrementDuration</references>
 </node>

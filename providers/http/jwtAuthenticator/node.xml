@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-04-18T16:44:02.587+02:00" lastModified="2025-03-11T16:17:28.467+01:00" leaf="true" version="7">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-04-18T16:44:02.587+02:00" lastModified="2025-10-08T11:45:54.600+02:00" leaf="true" version="9">
     <environmentId>ares</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
