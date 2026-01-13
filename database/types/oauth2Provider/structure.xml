@@ -37,4 +37,5 @@
     <field comment="If you enable silent login for this provider, we can do a best effort remember" minOccurs="0" name="allowSilent" type="java.lang.Boolean"/>
     <field comment="By default the merge strategy is &quot;provider&quot; which means the metadata from the provider wins (e.g. suppose the given name was updated). Strategy &quot;system&quot; means the system wins, we still map data from the provider though IF the system has NO value." minOccurs="0" name="mergeStrategy" type="java.lang.String"/>
     <field comment="Differentiate between manually configured openid (e.g. for user authentication) and automatically managed providers (e.g. for dynamic client credential flows for configurable apis)" name="managed" type="java.lang.Boolean"/>
+    <field comment="consent,none" minOccurs="0" name="prompt" type="java.lang.String"/>
 </structure>
