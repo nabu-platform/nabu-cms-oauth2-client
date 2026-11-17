@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2026-10-28T08:15:47.908+01:00" lastModified="2026-11-13T11:06:47.649+01:00" leaf="true" version="12">
+    <environmentId>ares</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>be.nabu.eai.module.smtp.api.SMTPAccessTokenProvider.getAccessToken</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.services.list</references>
+    <references>nabu.cms.oauth2.client.crud.oauth2Provider.types.output</references>
+    <references>nabu.cms.oauth2.client.services.getClientCredentials</references>
+    <references>nabu.cms.oauth2.client.types.token</references>
+    <references>java.lang.String</references>
+    <references>nabu.protocols.jdbc.pool.Services.connectionForContext</references>
+</node>

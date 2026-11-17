@@ -1,0 +1,91 @@
+<sequence id="1ee67ea3966a4b77add2a5cd5bb256d0">
+	<map id="542adba1a4404f6d8abb9ca238f0694f"
+		label="input/context != null &amp;&amp; input/context != ''">
+		<invoke id="2dfb1f218cf64868894eb07540700ef3"
+			resultName="resultContextConnection"
+			serviceId="nabu.protocols.jdbc.pool.Services.connectionForContext"
+			x="25"
+			y="25">
+			<link id="ed34afb0ba3a4485b3002b749eec551f">
+				<from>input/context</from>
+				<to>context</to>
+			</link>
+		</invoke>
+		<link id="4f3432cf69ce4649bd0f8fc4f952f42c">
+			<from>resultContextConnection/connectionId</from>
+			<to>connectionId</to>
+		</link>
+	</map>
+	<throw id="cd201be46d1648adabbb5b409f9c160b"
+		label="input/smtpClientId == null || input/smtpClientId == ''"
+		message="SMTP client ID is required"/>
+	<map id="c991b76af17345cdb93f322513e9ce4e">
+		<invoke id="5fbd773dbf7c4a479cb9d845e5cefcc3"
+			resultName="resultOAuthProviders"
+			serviceId="nabu.cms.oauth2.client.crud.oauth2Provider.services.list"
+			x="25"
+			y="25">
+			<link id="99714ec5d3984beea3e9a51876cdf2fa">
+				<from>input/smtpClientId</from>
+				<to>filter/name[0]</to>
+			</link>
+			<link id="3445f1da9a8f4f28a60771a27a43ba2c">
+				<from>connectionId</from>
+				<to>connectionId</to>
+			</link>
+			<link id="eaa5774a34134623b443e0b1c673f281"
+				fixedValue="true">
+				<from>2</from>
+				<to>limit</to>
+			</link>
+			<link id="0ccf8a123036418b820a24f37350ba4e"
+				fixedValue="true">
+				<from>NONE</from>
+				<to>totalCount</to>
+			</link>
+		</invoke>
+		<link id="52c9ed4002514d289c8b254b32680ea2">
+			<from>resultOAuthProviders/results[0]</from>
+			<to>provider</to>
+		</link>
+		<link id="d45cb651c9884ca68d61b9dfe93c7f34">
+			<from>resultOAuthProviders/results[1]</from>
+			<to>otherProvider</to>
+		</link>
+	</map>
+	<throw id="2e737722eb244b32a7f1e088820b72e3"
+		label="provider == null || provider/name != input/smtpClientId"
+		message="OAuth2 provider not found for SMTP client ID"/>
+	<throw id="8a05834e17aa4cd496125e287a65831c"
+		label="otherProvider != null"
+		message="Multiple OAuth2 providers match SMTP client ID"/>
+	<map id="101fdf1ada234e9bb4d976ecda6ee8ae">
+		<invoke id="ed787eeb59c5452cb15175442a1b13f0"
+			resultName="resultClientCredentials"
+			serviceId="nabu.cms.oauth2.client.services.getClientCredentials"
+			x="25"
+			y="25">
+			<link id="c888a38a127b4fedb0f83ed4877f8c39">
+				<from>provider/id</from>
+				<to>oauth2ProviderId</to>
+			</link>
+			<link id="4bccc1e038fc4a1caa4ba1102ffb0ee4">
+				<from>connectionId</from>
+				<to>connectionId</to>
+			</link>
+		</invoke>
+		<link id="d865bfb09ba04087bd39639cb1a5caa0">
+			<from>resultClientCredentials/token</from>
+			<to>token</to>
+		</link>
+	</map>
+	<throw id="56034edd62954e0f9ce9212e1911c867"
+		label="token/access_token == null || token/access_token == ''"
+		message="OAuth2 provider returned no access token"/>
+	<map id="8fb8ee5d6ea7441a86656dab3cd2d7b5">
+		<link id="196f5aa817334b9f84d356a327824ffb">
+			<from>token/access_token</from>
+			<to>output/accessToken</to>
+		</link>
+	</map>
+</sequence>

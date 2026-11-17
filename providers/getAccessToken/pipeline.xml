@@ -1,0 +1,8 @@
+<structure interface="be.nabu.eai.module.smtp.api.SMTPAccessTokenProvider.getAccessToken" name="pipeline">
+	<structure name="input" validate="true"/>
+	<structure name="output"/>
+	<structure definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" minOccurs="0" name="provider"/>
+	<structure definition="nabu.cms.oauth2.client.crud.oauth2Provider.types.output" minOccurs="0" name="otherProvider"/>
+	<structure definition="nabu.cms.oauth2.client.types.token" minOccurs="0" name="token"/>
+	<field minOccurs="0" name="connectionId" type="java.lang.String"/>
+</structure>
